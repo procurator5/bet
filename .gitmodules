@@ -1,0 +1,6 @@
+[submodule "django-bitcoin"]
+	path = django-bitcoin
+	url = git@github.com:procurator5/django-bitcoin.git
+[submodule "tippspiel"]
+	path = tippspiel
+	url = git@github.com:procurator5/tippspiel.git
