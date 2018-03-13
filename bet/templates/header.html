@@ -2,9 +2,13 @@
 <div id="header">
 <div class="header-inner position-fixed">
 {% if user.is_authenticated %}  
+	<a href="#" id="btn-back" class="ico-holder backButton" style="visibility: hidden; position: absolute;"></a>  
+	<a href="#" id="btn-menu" class="ico-holder btn-menu" open="false" style="visibility: visible;">  
+		<span class="unreads-count" id="unreadsCount" style="display:none;">1</span>  
+	</a> 
 	<a id="btn-login" class="btn-login loggedIn"> 
 		<span class="ico-holder ico-login " style="display: none;"></span> 
-		<span id="balanceHeader" style="display: inline-block;">0.00 RUB</span>  
+		<span id="balanceHeader" style="display: inline-block;">0.00 BTC</span>  
 		<span class="ico-holder ico-profile" style="display: inline-block;"></span> 
 	</a>  
       <a id="btn-deposit" class="ico-holder filled" style="display: inline-block;">

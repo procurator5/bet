@@ -1,0 +1,41 @@
+<div id="sidemenu">
+{% if user.is_authenticated %}  
+<div class="sidemenu">
+   <div class="sidemenuProfile">
+      <div class="ico-holder sett-holder"> {{ user.get_username }} <span>Баланс:  <span id="balanceSidemenu">0.0&nbsp;BTC</span>  </span> </div>
+      <span class="ico-holder settings"></span> 
+   </div>
+</div>
+	<ul class="menuNav sideNav">  
+		<li><a class="ico-holder deposit">Депозит на счет</a></li>
+{% else %}	
+	<div class="sidemenu"> 
+		<div class="sidemenuLogin"> 
+			<div class="ico-holder login-holder"> Выполните вход <span>или зарегистрируйтесь</span> </div> 
+			<span class="chevron"></span> 
+		</div>   
+	</div>  
+	<ul class="menuNav sideNav">  
+		<li>
+			<a class="ico-holder registr" href="/signup/">Регистрация</a>
+		</li>
+{% endif %}
+		<li><a class="ico-holder bets">Ставки</a></li> 
+		<li><a class="ico-holder search">Поиск</a></li>    
+		<li><a class="ico-holder contacts">Контакты</a></li>    
+		<li class="dynamicallyAdded promotions"> <a class="ico-holder">  <span class="ico-holder-text">Акции</span> <span class="chevron"></span> </a> </li>  
+		<li class="dynamicallyAdded adviser"> <a class="ico-holder">  <i class="adviser-count-icon"><span>2</span></i>  <span class="ico-holder-text">Советы</span> <span class="chevron"></span> </a> </li>   
+		<li> <a class="ico-holder cyberSport">Киберспорт</a> </li>       
+	</ul>  
+	<br> 
+</div>
+<script>
+$('#btn-menu').bind('click', function() {
+	$('html').attr('data-sidebar', 'visible');
+	$('body').append('<div class="mask-overlay mo-fullscrn mask_0" id="screen_locker"></div>')
+	$('#screen_locker').bind('click', function(){
+		$('html').attr('data-sidebar', 'hidden');
+		$("#screen_locker").remove()
+	})
+});
+
