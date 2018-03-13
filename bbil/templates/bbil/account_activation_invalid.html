@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <p>The confirmation link was invalid, possibly because it has already been used.</p>
+{% block body %}
+<div id="modals">
+   <div>
+      <div class="modal modal--type__error modal--origin__app modal--new" data-id="error:56933">
+         <div class="ico-holder modal__icon"></div>
+         <span class="modal__title">ОШИБКА!</span>  
+         <div class="modal__content"> The confirmation link was invalid, possibly because it has already been used. </div>
+         <div class="modal__buttons"> <span data-href="" data-index="0" class="modal__button modal__button--close">Закрыть</span> </div>
+      </div>
+   </div>
+</div>
 {% endblock %}

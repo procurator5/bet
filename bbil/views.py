@@ -10,12 +10,6 @@ from django.template.loader import render_to_string
 from bbil.forms import SignUpForm
 from bbil.tokens import account_activation_token
 
-
-@login_required
-def home(request):
-    return render(request, 'home.html')
-
-
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -24,17 +18,18 @@ def signup(request):
             user.is_active = False
             user.save()
 
+            print(urlsafe_base64_encode(force_bytes(user.pk)))
             current_site = get_current_site(request)
             subject = 'Activate Your MySite Account'
             message = render_to_string('bbil/account_activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'uid': force_text(urlsafe_base64_encode(force_bytes(user.pk))),
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject, message)
 
-            return redirect('bbil/account_activation_sent')
+            return redirect('account_activation_sent')
     else:
         form = SignUpForm()
     return render(request, 'bbil/signup.html', {'form': form})
@@ -56,6 +51,6 @@ def activate(request, uidb64, token):
         user.profile.email_confirmed = True
         user.save()
         login(request, user)
-        return redirect('home')
+        return redirect('/')
     else:
         return render(request, 'bbil/account_activation_invalid.html')
