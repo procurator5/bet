@@ -1,0 +1,185 @@
+{% load i18n staticfiles activepage %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <title>tippspiel</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/formatted-sb9.css" %}">
+
+    <!-- HTML5 shim -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Script -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>    
+    <script src="{% static "js/tippspiel.js" %}"></script>
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}" type="image/x-icon" />
+</head>
+<body class="wide" data-view="preMatchEvents" data-node="preMatchEvents" cz-shortcut-listen="true">
+<div class="menu menu-left menu-vertical tabs-icons" data-slider="true" data-level="1" data-menu-id="__root__" style="opacity: 1;">
+	<div class="menu-inner position-fixed"> 
+		<div class="tabs-nav"> 
+			<a href="#" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"></a> 
+			<a href="#" class="tabs-nav__itm tabs-nav__itm--next is-inactive"></a> 
+		</div> 
+		<div class="tab-list tab-list-current" data-count="2">
+			<ul>  
+				<li data-id="bets" class="tab item-bets active"> 
+					<div class="tab-inner"> 
+						<span class="ico-holder"></span> 
+						<div class="text">Ставки</div> 
+					</div> 
+				</li>  
+				<li data-id="search" class="tab item-search"> 
+					<div class="tab-inner"> 
+						<span class="ico-holder"></span> 
+							<div class="text">Поиск</div> 
+					</div> 
+				</li> 
+			</ul>  
+		</div> 
+	</div>
+</div>
+
+<!--  Header of site -->
+<div id="header">
+<div class="header-inner position-fixed">  
+	<a href="#" id="btn-back" class="ico-holder backButton" style="visibility: hidden; position: absolute;"></a>  
+	<a href="#" id="btn-menu" class="ico-holder btn-menu" open="false" style="visibility: visible;">  
+		<span class="unreads-count" id="unreadsCount" style="display:none;">1</span>  
+	</a> 
+	<a id="btn-login" class="btn-login">  
+		<span id="loginHeader" style="display: inline-block;">Вход</span> 
+		<span class="ico-holder ico-login " style="display: inline-block;"></span> 
+		<span id="balanceHeader" style="display: none;"></span>  
+		<span class="ico-holder ico-profile" style="display: none;"></span> 
+	</a>  
+	<a id="btn-registration" class="ico-holder" style="display: block;" href="/signup/"> Регистрация </a>  
+	<a id="btn-deposit" class="ico-holder" style="display: none;">
+		<div class="text-holder">Пополнить счёт</div>  
+	</a>  
+	<a id="logoMain" class="logoMainLeonRu">Main Logo</a>  
+</div>
+</div>
+
+<!-- Login and others -->
+<div id="tablet-popups">
+   <div id="loginPopup" style="display: none;">
+      <div id="loginPopupInner">
+         <span class="up"></span> <span class="closePopup ico-holder"></span> <span id="regSuccess-block"> <span id="regSuccess" style="display:none">Создание Вашего счета успешно завершено. </span> </span> 
+         <div class="loginForm leoncasDisabled">
+            <input tabindex="-1" name="fakeinput" style="visibility: hidden; position: absolute;"><input tabindex="-1" name="fakepassword" type="password" style="visibility: hidden; position: absolute;"> 
+            <div class="label-block">
+               <div class="input-holder"><input name="login" type="text" autocomplete="off" autocorrect="off" placeholder="E-mail или счет #" autocapitalize="off" spellcheck="false" class="validatable"><span class="error"></span></div>
+            </div>
+            <div class="label-block">
+               <div class="input-holder"><i class="eye ico-holder"></i><input class="password validatable" type="password" name="password" autocomplete="off" autocorrect="off" placeholder="Пароль" autocapitalize="off" spellcheck="false"><span class="error"></span><span class="error"></span></div>
+            </div>
+            <div class="label-block bsavePwd">
+               <input type="checkbox" name="savePassword" checked="checked"> <label class="cb-label fl"></label> 
+               <p>Сохранить пароль</p>
+            </div>
+            <input type="hidden" name="loadEventId" value=""> 
+            <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="Вход"> </div>
+            <a id="btn-registration" class="button gray" href="/signup/">Регистрация</a> <a id="pwdRecovery">Восстановление пароля</a> 
+         </div>
+      </div>
+   </div>
+   <div id="loginTwoFactorAuth">
+      <div id="loginPopupInner">
+         <span class="up"></span> <span class="closePopup ico-holder"></span> 
+         <div class="loginForm">
+            <header>Двухэтапная аутентификация</header>
+            <div class="tfa-info"> <i class="ico-holder"></i> <span>Введите одноразовый код аутентификации</span> </div>
+            <div id="tfa-input-mask">
+               <svg class="canvas" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+                  <g transform="rotate(-90 90 90)">
+                     <circle class="still" cx="90" cy="90" r="80"></circle>
+                     <circle class="moving" cx="90" cy="90" r="80"></circle>
+                  </g>
+               </svg>
+               <div class="time-left timer">
+                  <div class="timer__numbers"> 60 59 58 57 56 55 54 53 52 51 50 49 48 47 46 45 44 43 42 41 40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 </div>
+               </div>
+            </div>
+            <div class="label-block">
+               <div class="input-holder"><input class="tfaCode" type="tel" name="tfaCode" autocomplete="off" autocorrect="off" placeholder="Введите код" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+            </div>
+            <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="Вход"> </div>
+            <div class="tfa-additional-info"><span>Откройте приложение для аутентификации и скопируйте полученный код</span></div>
+            <footer> <a class="need-help"> Мне нужна помощь </a> </footer>
+         </div>
+      </div>
+   </div>
+   <div id="slip" class="covered empty portrait" style="display: none;">
+      <div id="slipBox" class="">
+         <div id="slipTitle" class="empty">
+            <h1>В игре (0)</h1>
+            <span id="slipClose" class="slipClose ico-holder"></span> 
+         </div>
+         <div id="slipHolder">
+            <div id="slipData">
+               <p><b>Ставки не выбраны.</b> Чтобы выбрать ставку, кликните соответствующий коэффициент.</p>
+            </div>
+         </div>
+      </div>
+      <div class="waitingBets">
+         <h1 class="hidden">Неразыгранные ставки</h1>
+         <ul id="Z_1" class=""></ul>
+      </div>
+      <div class="slipLinks">
+         <ul>
+            <li><a href="/signup/" class="slip-reg-link">Зарегистрироваться</a></li>
+         </ul>
+      </div>
+      <div class="campaign--tablet" data-loc="custom"></div>
+   </div>
+</div>
+
+<!-- Content block -->
+        {% block body %}{% endblock %}
+
+    </div>
+
+<!-- Popup menu -->
+<div id="sidemenu">
+	<div class="sidemenu"> 
+		<div class="sidemenuLogin"> 
+			<div class="ico-holder login-holder"> Выполните вход <span>или зарегистрируйтесь</span> </div> 
+			<span class="chevron"></span> 
+		</div>   
+	</div>  
+	<ul class="menuNav sideNav">  
+		<li>
+			<a class="ico-holder registr" href="/signup/">Регистрация</a>
+		</li>   
+		<li><a class="ico-holder bets">Ставки</a></li> 
+		<li><a class="ico-holder search">Поиск</a></li>    
+		<li><a class="ico-holder contacts">Контакты</a></li>    
+		<li class="dynamicallyAdded promotions"> <a class="ico-holder">  <span class="ico-holder-text">Акции</span> <span class="chevron"></span> </a> </li>  
+		<li class="dynamicallyAdded adviser"> <a class="ico-holder">  <i class="adviser-count-icon"><span>2</span></i>  <span class="ico-holder-text">Советы</span> <span class="chevron"></span> </a> </li>   
+		<li> <a class="ico-holder cyberSport">Киберспорт</a> </li>       
+	</ul>  
+	<br> 
+</div>
+<script>
+$('#btn-menu').bind('click', function() {
+	$('html').attr('data-sidebar', 'visible');
+	$('body').append('<div class="mask-overlay mo-fullscrn mask_0" id="screen_locker"></div>')
+	$('#screen_locker').bind('click', function(){
+		$('html').attr('data-sidebar', 'hidden');
+		$("#screen_locker").remove()
+	})
+});
+
+</script>
+</body>
+</html>

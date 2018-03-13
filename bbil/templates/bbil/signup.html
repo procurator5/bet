@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="wrapper">
+<div id="content-wrap">
+<div id="content">
+   <div class="view visible" id="registrationView">
+      <h1 class="title"><span></span>Регистрация</h1>
+      <div class="registration panel" title="Регистрация">
+         <div class="hintBlock">
+            <b class="fs16">При заполнении формы:</b> 
+            <p> Все поля формы являются обязательными к заполнению.<br> Настоятельно просим Вас указывать достоверную информацию. </p>
+         </div>
+         <form autocomplete="off" method="post">
+             {% csrf_token %}
+            <input name="regdo" type="hidden" value="register"> <input name="doaction" type="hidden" value="1"> 
+            <fieldset>
+               <h4>Личная информация</h4>
+               <div class="label-block">
+                  <label class="labelTop">Логин</label>
+                  <div class="input-holder"><input name="fname" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span></div>
+               </div>
+               <h4>Данные счета</h4>
+               <div class="hidden">
+                  <div class="label-block">
+                     <label for="" class="labelTop">Валюта счета</label>
+                     <span class="select-wrapper">
+                        <div class="select-holder currency no-arrow">
+                           <select name="currency" disabled="">
+                              <option value="-1">...выбрать</option>
+                              <option value="RUB" selected="selected">RUB</option>
+                           </select>
+                        </div>
+                        <span class="error"></span>
+                     </span>
+                  </div>
+               </div>
+               <div class="label-block">
+                  <label class="labelTop">E-mail</label>
+                  <div class="input-holder"><input type="text" name="email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span></div>
+               </div>
+               <input tabindex="-1" name="fakeinput" style="visibility: hidden; position: absolute;"><input tabindex="-1" name="fakepassword" type="password" style="visibility: hidden; position: absolute;"> 
+               <div class="label-block">
+                  <label class="labelTop">Пароль (минимум 7 символов)</label>
+                  <div class="input-holder"><i class="eye ico-holder"></i><input class="password validatable" type="password" name="rpassword" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+               </div>
+               <p class="hint">Пароль должен содержать как минимум одну букву и одну цифру.</p>
+               <div class="leonru-phone-holder">
+                  <p><strong>ВАЖНО!</strong> На этот Bitcoin кошелек будет отправлен
+                      <b>Ваш выигрыш</b>.
+                     Будьте внимательны при заполнении поля
+                  </p>
+                  <div class="label-block">
+                     <label class="labelTop">Номер Bitcoin -кошелька</label>
+                     <div class="input-holder">
+                        <input type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="validatable leonruPhoneInput" placeholder="___ _______"><span class="error"></span>
+                     </div>
+                  </div>
+               </div>
+               
+            </fieldset>
+            <!-- Registration button --> <input type="submit" id="regButton" class="button" value="Зарегистрироваться"> <!-- END of Registration button --> <input type="submit" class="hiddenButton"> 
+         </form>
+      </div>
+   </div>
+</div>
+</div>
+</div>
+  <!-- h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form -->
+{% endblock %} 

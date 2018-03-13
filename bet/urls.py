@@ -20,4 +20,5 @@ import tippspiel
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tippspiel.urls')),
+    path('', include('bbil.urls')),
 ]
