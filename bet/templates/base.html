@@ -34,7 +34,10 @@
 			<ul>  
 				<li data-id="bets" class="tab item-bets active"> 
 					<div class="tab-inner"> 
+					<a href="/" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"> 
+					
 						<span class="ico-holder"></span> 
+					</a>
 						<div class="text">Ставки</div> 
 					</div> 
 				</li>  
@@ -50,25 +53,7 @@
 </div>
 
 <!--  Header of site -->
-<div id="header">
-<div class="header-inner position-fixed">  
-	<a href="#" id="btn-back" class="ico-holder backButton" style="visibility: hidden; position: absolute;"></a>  
-	<a href="#" id="btn-menu" class="ico-holder btn-menu" open="false" style="visibility: visible;">  
-		<span class="unreads-count" id="unreadsCount" style="display:none;">1</span>  
-	</a> 
-	<a id="btn-login" class="btn-login">  
-		<span id="loginHeader" style="display: inline-block;">Вход</span> 
-		<span class="ico-holder ico-login " style="display: inline-block;"></span> 
-		<span id="balanceHeader" style="display: none;"></span>  
-		<span class="ico-holder ico-profile" style="display: none;"></span> 
-	</a>  
-	<a id="btn-registration" class="ico-holder" style="display: block;" href="/signup/"> Регистрация </a>  
-	<a id="btn-deposit" class="ico-holder" style="display: none;">
-		<div class="text-holder">Пополнить счёт</div>  
-	</a>  
-	<a id="logoMain" class="logoMainLeonRu">Main Logo</a>  
-</div>
-</div>
+{%include "header.html" %}
 
 <!-- Login and others -->
 <div id="tablet-popups">
