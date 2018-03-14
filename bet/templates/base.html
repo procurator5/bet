@@ -57,27 +57,10 @@
 
 <!-- Login and others -->
 <div id="tablet-popups">
-   <div id="loginPopup" style="display: none;">
-      <div id="loginPopupInner">
-         <span class="up"></span> <span class="closePopup ico-holder"></span> <span id="regSuccess-block"> <span id="regSuccess" style="display:none">Создание Вашего счета успешно завершено. </span> </span> 
-         <div class="loginForm leoncasDisabled">
-            <input tabindex="-1" name="fakeinput" style="visibility: hidden; position: absolute;"><input tabindex="-1" name="fakepassword" type="password" style="visibility: hidden; position: absolute;"> 
-            <div class="label-block">
-               <div class="input-holder"><input name="login" type="text" autocomplete="off" autocorrect="off" placeholder="E-mail или счет #" autocapitalize="off" spellcheck="false" class="validatable"><span class="error"></span></div>
-            </div>
-            <div class="label-block">
-               <div class="input-holder"><i class="eye ico-holder"></i><input class="password validatable" type="password" name="password" autocomplete="off" autocorrect="off" placeholder="Пароль" autocapitalize="off" spellcheck="false"><span class="error"></span><span class="error"></span></div>
-            </div>
-            <div class="label-block bsavePwd">
-               <input type="checkbox" name="savePassword" checked="checked"> <label class="cb-label fl"></label> 
-               <p>Сохранить пароль</p>
-            </div>
-            <input type="hidden" name="loadEventId" value=""> 
-            <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="Вход"> </div>
-            <a id="btn-registration" class="button gray" href="/signup/">Регистрация</a> <a id="pwdRecovery">Восстановление пароля</a> 
-         </div>
-      </div>
-   </div>
+{% if not user.is_authenticated %}
+	{% include "login_form.html" %} 
+{% endif %}
+
    <div id="slip" class="covered empty portrait" style="display: none;">
       <div id="slipBox" class="">
          <div id="slipTitle" class="empty">
@@ -106,11 +89,8 @@
 <!-- Content block -->
         {% block body %}{% endblock %}
 
-    </div>
-
 <!-- Popup menu -->
 {% include "popupmenu.html" %}
 
-</script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<div id="loginPopup" style="display: none;">
+   <div id="loginPopupInner">
+      <span class="up"></span> <span class="closePopup ico-holder" id="btn-close"></span> 
+      <div class="loginForm leoncasDisabled">
+      	<form method="post" action="{% url 'login' %}">
+      	 {% csrf_token %}
+         <div class="label-block">
+            <div class="input-holder"><input name="username" type="text" autocomplete="off" autocorrect="off" placeholder="Имя пользователя" autocapitalize="off" spellcheck="false" class="validatable"><span class="error"></span></div>
+         </div>
+         <div class="label-block">
+            <div class="input-holder"><i class="eye ico-holder"></i><input class="password validatable" type="password" name="password" autocomplete="off" autocorrect="off" placeholder="Пароль" autocapitalize="off" spellcheck="false"><span class="error"></span><span class="error"></span></div>
+         </div>
+         <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="Вход"> </div>
+         </form>
+         <a id="pwdRecovery">Восстановление пароля</a> 
+      </div>
+   </div>
+</div>
+
+<script>
+$('#btn-login').bind('click', function() {
+	$('#loginPopup').attr('style', 'display: block;');
+});
+
+$('#btn-close').bind('click', function() {
+	$('#loginPopup').attr('style', 'display: none;');
+});
+
+</script>

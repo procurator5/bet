@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
+encoding//django_bitcoin/currency.py=utf-8
+encoding//django_bitcoin/utils.py=utf-8
 encoding//tippspiel/install.py=utf-8
 encoding//tippspiel/views.py=utf-8

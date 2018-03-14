@@ -9,6 +9,7 @@ from django.template.loader import render_to_string
 
 from bbil.forms import SignUpForm
 from bbil.tokens import account_activation_token
+from django.template.context_processors import request
 
 def signup(request):
     if request.method == 'POST':
@@ -54,3 +55,12 @@ def activate(request, uidb64, token):
         return redirect('/')
     else:
         return render(request, 'bbil/account_activation_invalid.html')
+
+@login_required    
+def profile(request):
+    return render(
+        request,
+        'bbil/profile.html',
+        {
+        },
+    )
