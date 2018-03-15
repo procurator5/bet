@@ -62,6 +62,7 @@
 {% endif %}
 
    <div id="slip" class="covered empty portrait" style="display: none;">
+{% block bets %}
       <div id="slipBox" class="">
          <div id="slipTitle" class="empty">
             <h1>В игре (0)</h1>
@@ -73,19 +74,48 @@
             </div>
          </div>
       </div>
+{% endblock %}
+{% if user.is_authenticated %}
+	<div class="slip-banner-wrapper layout--table">
+	   <div>
+	      <div class="vertical-align-m">
+	         <div class="layout--table">
+	            <div>
+	               <div class="dtc text-center bet-sell-col"> <i class="icon-bet-sell"></i> </div>
+	               <div class="vertical-align-m text-left">
+	                  <div class="h4">Продажа ставок</div>
+	                  <div class="h5">Досрочный расчет ставки</div>
+	               </div>
+	            </div>
+	         </div>
+	      </div>
+	      <div class="vertical-align-m">
+	         <div class="left-trapezium"> <i class="icon-right-arrow"></i> </div>
+	      </div>
+	   </div>
+	</div>
+	<div class="slipLinks">
+	   <ul>
+	      <li><a href="#" class="slip-dep-link">Пополнить счёт</a></li>
+	      <li><a href="#" class="slip-payout-link">Получить выплату</a></li>
+	      <li><a href="#" class="slip-bethistor-link">История ставок</a></li>
+	   </ul>
+	</div>   
+
+{% else %}
       <div class="waitingBets">
          <h1 class="hidden">Неразыгранные ставки</h1>
          <ul id="Z_1" class=""></ul>
       </div>
       <div class="slipLinks">
          <ul>
-            <li><a href="/signup/" class="slip-reg-link">Зарегистрироваться</a></li>
+            <li><a href="{% url 'signup' %}" class="slip-reg-link">Зарегистрироваться</a></li>
          </ul>
       </div>
       <div class="campaign--tablet" data-loc="custom"></div>
    </div>
+{% endif %}
 </div>
-
 <!-- Content block -->
         {% block body %}{% endblock %}
 
