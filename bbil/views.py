@@ -67,3 +67,22 @@ def profile(request):
             'bitcoin_account': recv_address
         },
     )
+    
+@login_required
+def pay(request):
+    return render(
+        request,
+        'bbil/pay.html',
+        {
+        },
+    )
+    
+@login_required
+def bitcoin(request):
+    return render(
+        request,
+        'bbil/bitcoin.html',
+        {
+        },
+    )
+    

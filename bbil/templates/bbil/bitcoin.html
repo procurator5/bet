@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% block body %}
+<div id="wrapper">
+   <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
+   <div class="menu menu-top menu-horizontal hidden" data-slider="true" data-level="2" data-menu-id="depositsList" style="opacity: 1;"></div>
+   <div class="menu menu-top menu-horizontal hidden" data-level="3" data-sticky="false"></div>
+   <div class="banner" style="display: none;"></div>
+   <div id="content-wrap">
+      <div class="campaign campaign--tablet" data-loc="top">
+         <div></div>
+      </div>
+      <div class="slider"></div>
+      <div id="content">
+         <div class="view visible" id="makedepositView">
+            <h1 class="title"><span class="title-holder">Депозит на счет</span></h1>
+            <div class="payment-holder">
+               <div class="depWithHolder">
+                  <div class="nav-bar">
+                     <a class="button simple select-another" id="goToDepositsList">Выбрать другой... </a> 
+                     <div class="logo-holder"> <span class="detail-image depwebmoney" style="background-image: url(https://cdn.spadsmedia2.com/mobile/payment_systems/dark/webmoney.png?bust=1512997874342);"></span> </div>
+                  </div>
+               </div>
+               <div id="depositForm">
+                  <form>
+                     <h1>WebMoney</h1>
+                     <fieldset>
+                        <div class="label-block">
+                           <label class="labelTop">Сумма к зачислению, <span class="amountCur">RUB</span></label>
+                           <div class="input-holder"><input min="0" pattern="[0-9]*" inputmode="numeric" type="number" name="amount" class="depwebmoney validatable" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                        </div>
+                     </fieldset>
+                     <a class="button">Зачислить</a> <input type="submit" class="hiddenButton">  
+                  </form>
+                  <div class="redirectForm"></div>
+                  <div class="hintBlock">
+                     <p>Минимальная сумма депозита:&nbsp;<span class="minAmount">1.00 RUB</span></p>
+                     <br> 
+                     <p><strong>Важно!</strong> Если валюта игрового счета отличается от валюты платежа, сумма зачисления будет автоматически сконвертирована в валюту Вашего счета.</p>
+                     <br> 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="campaign campaign--tablet" data-loc="bottom" style="">
+         <div></div>
+      </div>
+      <footer id="footer">
+         <ul class="footer-links">
+            <li class="footer-contact ico-holder"> Контакты </li>
+            <li class="footer-desk ico-holder"> На основной сайт </li>
+            <li class="footer-terms ico-holder">  Условия и Положения  </li>
+            <li class="footer-rules ico-holder"> Правила </li>
+         </ul>
+      </footer>
+   </div>
+</div>
+{% endblock %}
