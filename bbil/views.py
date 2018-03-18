@@ -59,21 +59,31 @@ def activate(request, uidb64, token):
 @login_required    
 def profile(request):
     profile =Profile.objects.get(user=request.user)
-    recv_address = profile.wallet.receiving_address(fresh_addr=False)
     return render(
         request,
         'bbil/profile.html',
         {
-            'bitcoin_account': recv_address
+            'wallet': profile.wallet
         },
     )
     
 @login_required
 def pay(request):
+    profile =Profile.objects.get(user=request.user)
+    recv_address = profile.wallet.receiving_address(fresh_addr=False)
+
+    try:
+        print(request.POST.get("amount"))
+        amount = float(request.POST.get("amount"))
+    except TypeError:
+        amount = 0.1
+
     return render(
         request,
         'bbil/pay.html',
         {
+            'wallet': profile.wallet,
+            'amount': amount,
         },
     )
     

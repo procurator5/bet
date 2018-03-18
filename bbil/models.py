@@ -12,6 +12,7 @@ class Profile(models.Model):
     # this is not needed if small_image is created at set_image
     def save(self, *args, **kwargs):
         self.wallet, created = Wallet.objects.get_or_create(label=self.user.username)
+        recv_address = self.wallet.receiving_address(fresh_addr=False)
         super(Profile, self).save(*args, **kwargs)
     
 @receiver(post_save, sender=User)

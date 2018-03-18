@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n staticfiles %}
+{% load currency_conversions %}
 {% block body %}
 <div id="wrapper">
    <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
@@ -17,26 +18,32 @@
             <div class="payment-holder">
                <div class="depWithHolder">
                   <div class="nav-bar">
-                     <a class="button simple select-another" id="goToDepositsList">Выбрать другой... </a> 
-                     <div class="logo-holder"> <span class="detail-image depwebmoney" style="background-image: url(https://cdn.spadsmedia2.com/mobile/payment_systems/dark/webmoney.png?bust=1512997874342);"></span> </div>
+                     <!-- a class="button simple select-another" id="goToDepositsList">Выбрать другой... </a --> 
+                     <div class="logo-holder"> <span class="detail-image depwebmoney" style="background-image: url(https://en.bitcoin.it/w/images/en/f/fd/BC_nBG_64px.png);"></span> </div>
                   </div>
                </div>
                <div id="depositForm">
-                  <form>
-                     <h1>WebMoney</h1>
+                  <form method="POST" action="#">
+                     <h1>Bitcoin</h1>
+                  <div class="hintBlock">
+                     <p>Пополнить счет можно прямым по номеру счета (Bitcon-адрес связанный с Вашим аккаунтом) или воспрользовавшись генератором QR-кода для перечисления средств</p>
+                     <br>
+                     <p><strong>Ваш номер счета: </strong> {{wallet.receiving_address}}</p>
+                     <br> 
+                  </div>                     
                      <fieldset>
                         <div class="label-block">
-                           <label class="labelTop">Сумма к зачислению, <span class="amountCur">RUB</span></label>
-                           <div class="input-holder"><input min="0" pattern="[0-9]*" inputmode="numeric" type="number" name="amount" class="depwebmoney validatable" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                           <label class="labelTop">Сумма к зачислению, <span class="amountCur">BTC</span></label>
+                           <div class="input-holder"><input min="0.0001" pattern="[0-9]*" inputmode="numeric" type="number" name="amount" class="depwebmoney validatable" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" step="0.0001"><span class="error"></span></div>
                         </div>
+                     {% csrf_token %}
                      </fieldset>
-                     <a class="button">Зачислить</a> <input type="submit" class="hiddenButton">  
+                     <input type="submit" class="button" value="Зачислить">  
                   </form>
-                  <div class="redirectForm"></div>
                   <div class="hintBlock">
-                     <p>Минимальная сумма депозита:&nbsp;<span class="minAmount">1.00 RUB</span></p>
+                     <p>Минимальная сумма депозита:&nbsp;<span class="minAmount">0.0001 BTC</span></p>
                      <br> 
-                     <p><strong>Важно!</strong> Если валюта игрового счета отличается от валюты платежа, сумма зачисления будет автоматически сконвертирована в валюту Вашего счета.</p>
+                     <p><strong>Важно!</strong> Пополнение счета произойдет после подтверждения транзакции Bitcoin, что может занять некоторое время</p>
                      <br> 
                   </div>
                </div>
@@ -44,16 +51,10 @@
          </div>
       </div>
       <div class="campaign campaign--tablet" data-loc="bottom" style="">
-         <div></div>
+         <div>
+         {% bitcoin_payment_qr wallet.receiving_address amount %}
+         </div>
       </div>
-      <footer id="footer">
-         <ul class="footer-links">
-            <li class="footer-contact ico-holder"> Контакты </li>
-            <li class="footer-desk ico-holder"> На основной сайт </li>
-            <li class="footer-terms ico-holder">  Условия и Положения  </li>
-            <li class="footer-rules ico-holder"> Правила </li>
-         </ul>
-      </footer>
    </div>
 </div>
 {% endblock %}

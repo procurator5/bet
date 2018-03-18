@@ -41,8 +41,8 @@
          <div class="view visible" id="profileView">
             <div class="accHolder">
                <h3>Мой счет</h3>
-               <div class="accNum"><span>Номер счёта:</span>&nbsp;{{bitcoin_account}}</div>
-               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">Депозит</a> <span>Баланс:</span> 0.00 RUB </div>
+               <div class="accNum"><span>Номер счёта:</span>&nbsp;{{wallet.receiving_address}}</div>
+               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">Депозит</a> <span>Баланс:</span> {{wallet.total_balance}} BTC </div>
                <ul class="accDetails">
                   <li id="accDetailsWtb" class="al"> <span>В игре</span> <span class="waitingAmount ico-holder blank">0</span> <span class="accAmount">0.00 RUB</span> </li>
                   <li id="accDetailsWdr" class="ar"> <span>Запрошено к выплате</span> <span class="waitingPayout ico-holder">...</span> <span class="accAmount">0.00 RUB</span> </li>
