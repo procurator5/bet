@@ -1,8 +1,9 @@
+{% load user_profile %}
 <div id="sidemenu">
 {% if user.is_authenticated %}  
 <div class="sidemenu">
    <div class="sidemenuProfile">
-      <div class="ico-holder sett-holder"> {{ user.get_username }} <span>Баланс:  <span id="balanceSidemenu">0.0&nbsp;BTC</span>  </span> </div>
+      <div class="ico-holder sett-holder"> {{ user.get_username }} <span>Баланс:  <span id="balanceSidemenu">{% user_balance %}&nbsp;BTC</span>  </span> </div>
       <span class="ico-holder settings"></span> 
    </div>
 </div>

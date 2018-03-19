@@ -1,3 +1,4 @@
+{% load user_profile %}
 <!--  Header of site -->
 <div id="header">
 <div class="header-inner position-fixed">
@@ -8,7 +9,7 @@
 	</a> 
 	<a id="btn-login" class="btn-login loggedIn"> 
 		<span class="ico-holder ico-login " style="display: none;"></span> 
-		<span id="balanceHeader" style="display: inline-block;">0.00 BTC</span>  
+		<span id="balanceHeader" style="display: inline-block;">{% user_balance %} BTC</span>  
 		<span class="ico-holder ico-profile" style="display: inline-block;" onclick="return location.href = '{% url 'profile' %}'"></span> 
 	</a>  
       <a id="btn-deposit" class="ico-holder filled" style="display: inline-block;" href="{% url 'pay' %}">
