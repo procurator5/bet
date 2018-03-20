@@ -62,7 +62,10 @@
 {% endif %}
 
    <div id="slip" class="covered empty portrait" style="display: none;">
-{% block bets %}
+   {% block bets %}
+	{% if user.is_authenticated %}
+		{% actual_bids %}
+	{% else %}
       <div id="slipBox" class="">
          <div id="slipTitle" class="empty">
             <h1>В игре (0)</h1>
@@ -74,8 +77,9 @@
             </div>
          </div>
       </div>
-{% endblock %}
-
+	{% endif %}
+	{% endblock %}
+	
 {% if user.is_authenticated %}
 	<div class="slip-banner-wrapper layout--table">
 	   <div>

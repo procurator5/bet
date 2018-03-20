@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n staticfiles %}
+{% load activepage %}
 {% block body %}
 <div id="wrapper">
    <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
@@ -95,4 +96,8 @@
    </div>
    <a href="#identification" class="ident-bar ident-bar--online">Пройти идентификацию</a> 
 </div>
+{% endblock %}
+
+{% block bets %}
+	{% actual_bids %}
 {% endblock %}
