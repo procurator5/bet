@@ -6,7 +6,7 @@ from bbil import views as core_views
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'tippspiel/overview.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, {'next_page': 'login'}, name='logout'),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'tippspiel/overview.html', 'next_page': 'tippspiel_match_list'}, name='logout'),
     url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^account_activation_sent/$', core_views.account_activation_sent, name='account_activation_sent'),
     url(r'^accounts/profile/$', core_views.profile, name='profile'),
@@ -14,5 +14,5 @@ urlpatterns = [
         core_views.activate, name='activate'),
     url(r'^pay/$', core_views.pay, name='pay'),
     url(r'^bitcoin/$', core_views.bitcoin, name='bitcoin'),
-    
+    url(r'^settings/$', core_views.settings, name='settings'),
 ]

@@ -138,6 +138,6 @@ EMAIL_USE_TLS = True
 
 try:
     from bet.localsettings import *
-except ModuleNotFoundError:
+except ImportError:
     pass
 

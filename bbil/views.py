@@ -96,3 +96,14 @@ def bitcoin(request):
         },
     )
     
+
+@login_required
+def settings(request):
+    errors = []
+    return render(
+        request,
+        'bbil/settings.html',
+        {
+            'errors': errors
+        },
+    )

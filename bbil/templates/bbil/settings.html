@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% block body %}
+
+<div id="wrapper">
+   <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
+   <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
+      <div class="menu-inner position-fixed tab-list-current">
+         <div class="tabs-nav"> <a href="#" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"></a> <a href="#" class="tabs-nav__itm tabs-nav__itm--next is-inactive"></a> </div>
+         <div class="tab-list tab-list-current" data-count="3">
+            <ul>
+               <li data-id="profileGeneral" class="tab item-profileGeneral" onclick="return location.href = '{% url 'profile' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Профайл</div>
+                  </div>
+               </li>
+               <li data-id="history" class="tab item-history" onclick="return location.href = '{% url 'bets_history' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">История</div>
+                  </div>
+               </li>
+               <li data-id="profileSettings" class="tab item-profileSettings active">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Настройки</div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="menu menu-top menu-horizontal hidden" data-level="3" data-sticky="false" data-menu-id="history" style="opacity: 1;"></div>
+   <div class="banner" style="display: none;"></div>
+   <div id="content-wrap">
+      <div class="campaign campaign--tablet" data-loc="top">
+         <div></div>
+      </div>
+      <div class="slider"></div>
+      <div id="content">
+         <div class="view visible" id="settingsView">
+            <h1 class="title"><span class="title-holder">Изменение личных данных</span></h1>
+            <div class="errors"></div>
+            <form id="settingsForm" class="profileSettings">
+               <fieldset>
+                  <div class="label-block">
+                     <label class="labelTop">Валюта счета</label>
+                     <div class="input-holder"><input name="currency" disabled="disabled" class="non-editable" value="RUB" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                  </div>
+                  <div class="label-block">
+                     <label class="labelTop">Адрес эл. почты (E-mail)</label>
+                     <div class="input-holder"><input name="email" disabled="disabled" class="non-editable" value="cpa10@yandex.ru" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                  </div>
+                  <div class="label-block">
+                     <label for="country" class="labelTop">Страна</label>
+                     <div class="input-holder"><input id="country" name="country" disabled="disabled" class="non-editable" value="Россия" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                  </div>
+                  <div class="label-block">
+                     <label class="labelTop">Город</label>
+                     <div class="input-holder"><input name="city" value="Москва" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span></div>
+                  </div>
+                  <div class="label-block">
+                     <label class="labelTop">Адрес</label>
+                     <div class="input-holder"><input name="address" value="Дмитровское шоссе, д.35, кв.4" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span><span class="error"></span></div>
+                  </div>
+                  <div class="label-block">
+                     <label class="labelTop">Контактный телефон</label>
+                     <div class="input-holder"><input name="phone" value="89096298645" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span></div>
+                  </div>
+               </fieldset>
+               <div class="label-block cb_subscribe">
+                  <input name="subscribe" type="checkbox"> <label class="cb-label fl"></label> 
+                  <p> Я согласен получать новостную рассылку со специальными предложениями и бонусами. </p>
+               </div>
+               <a id="settingsSubmit" class="button">Сохранить</a> <input type="submit" class="hiddenButton"> 
+            </form>
+            <div class="profileSettings">
+               <h1 class="title"><span class="title-holder">Настройки безопасности</span></h1>
+               <ul class="list">
+                  <li>
+                     <a id="changePass">Изменение пароля<span class="chevron"></span></a>
+                     <hr>
+                  </li>
+                  <li>
+                     <a id="verification">Верификация счета<span class="chevron"></span></a>
+                     <hr>
+                  </li>
+                  <li>
+                     <a id="two-factor-auth">Двухэтапная аутентификация<span class="chevron"></span></a>
+                     <hr>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="campaign campaign--tablet" data-loc="bottom" style="">
+         <div></div>
+      </div>
+      <footer id="footer">
+         <ul class="footer-links">
+            <li class="footer-contact ico-holder"> Контакты </li>
+            <li class="footer-desk ico-holder"> На основной сайт </li>
+            <li class="footer-terms ico-holder">  Условия и Положения  </li>
+            <li class="footer-rules ico-holder"> Правила </li>
+         </ul>
+      </footer>
+   </div>
+</div>
+
+{% endblock %}
