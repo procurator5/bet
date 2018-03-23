@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-import tippspiel
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tippspiel.urls')),
     path('', include('bbil.urls')),
+    path('', include('django_bitcoin.urls')),    
 ]

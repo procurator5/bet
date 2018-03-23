@@ -42,8 +42,8 @@
          <div class="view visible" id="profileView">
             <div class="accHolder">
                <h3>Мой счет</h3>
-               <div class="accNum"><span>Номер счёта:</span>&nbsp;63403322</div>
-               <div class="accBalance"> <a id="profileDeposit" class="button">Депозит</a> <span>Баланс:</span> 0.00 RUB </div>
+               <div class="accNum"><span>Номер счёта:</span>&nbsp;{{wallet.receiving_address}}</div>
+               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">Депозит</a> <span>Баланс:</span> {{wallet.total_balance}} BTC </div>
                <ul class="accDetails">
                   <li id="accDetailsWtb" class="al"> <span>В игре</span> <span class="waitingAmount ico-holder blank">0</span> <span class="accAmount">0.00 RUB</span> </li>
                   <li id="accDetailsWdr" class="ar"> <span>Запрошено к выплате</span> <span class="waitingPayout ico-holder">...</span> <span class="accAmount">0.00 RUB</span> </li>
@@ -62,39 +62,11 @@
                   </li>
                </ul>
             </div>
-            <div class="bonusHolder">
-               <h3>Бонусы</h3>
-               <span id="bonusHintButton" class="ico-holder"></span>  
-               <div class="bonusAmount">
-                  <span class="agree ico-holder">Вы участвуете в программе</span>   <span>Бонусные очки</span> 
-                  <div class="leonPoints">0.00</div>
-               </div>
-               <ul class="bonusDetails">
-                  <li>
-                     <div class="bonusExchange">
-                        <h4>Обмен бонусных очков</h4>
-                        <span>Для обмена бонусов осталось набрать:</span> <span class="leonPoints">10000.00</span> 
-                     </div>
-                  </li>
-               </ul>
-            </div>
-            <a id="logout" class="button gray" href="{% url 'logout' %}">Выход</a>  
+            <a id="logout" class="button gray">Выход</a>  
          </div>
       </div>
-      <div class="campaign campaign--tablet" data-loc="bottom" style="">
-         <div></div>
-      </div>
-      <footer id="footer">
-         <ul class="footer-links">
-            <li class="footer-contact ico-holder"> Контакты </li>
-            <li class="footer-desk ico-holder"> На основной сайт </li>
-            <li class="footer-terms ico-holder">  Правила  </li>
-            <li class="footer-docs ico-holder"> Регламентирующие документы </li>
-         </ul>
-         <div class="footer-copyright"> © Общество с ограниченной ответственностью «Леон», 2016 <br> <span>Зарегистрированный товарный знак LEON.RU</span> </div>
-      </footer>
+
    </div>
-   <a href="#identification" class="ident-bar ident-bar--online">Пройти идентификацию</a> 
 </div>
 {% endblock %}
 

@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 
 from bbil.forms import SignUpForm
 from bbil.tokens import account_activation_token
-from django.template.context_processors import request
+from bbil.models import Profile
 
 def signup(request):
     if request.method == 'POST':
@@ -58,12 +58,44 @@ def activate(request, uidb64, token):
 
 @login_required    
 def profile(request):
+    profile =Profile.objects.get(user=request.user)
     return render(
         request,
         'bbil/profile.html',
         {
+            'wallet': profile.wallet
         },
     )
+    
+@login_required
+def pay(request):
+    profile =Profile.objects.get(user=request.user)
+    recv_address = profile.wallet.receiving_address(fresh_addr=False)
+
+    try:
+        print(request.POST.get("amount"))
+        amount = float(request.POST.get("amount"))
+    except TypeError:
+        amount = 0.1
+
+    return render(
+        request,
+        'bbil/pay.html',
+        {
+            'wallet': profile.wallet,
+            'amount': amount,
+        },
+    )
+    
+@login_required
+def bitcoin(request):
+    return render(
+        request,
+        'bbil/bitcoin.html',
+        {
+        },
+    )
+    
 
 @login_required
 def settings(request):

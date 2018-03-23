@@ -8,8 +8,12 @@ from django_bitcoin.models import Wallet, currency
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email_confirmed = models.BooleanField(default=False)
-    escrow_bitcoin_address = models.CharField(max_length=50, unique=True, null = True)
-    balance = models.FloatField(default = 0.0)
+    wallet = models.ForeignKey("django_bitcoin.Wallet", on_delete=models.DO_NOTHING, null=True)
+    # this is not needed if small_image is created at set_image
+    def save(self, *args, **kwargs):
+        self.wallet, created = Wallet.objects.get_or_create(label=self.user.username)
+        recv_address = self.wallet.receiving_address(fresh_addr=False)
+        super(Profile, self).save(*args, **kwargs)
     
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
