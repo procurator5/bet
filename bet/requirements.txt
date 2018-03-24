@@ -1,5 +1,5 @@
 psycopg2-binary
 jsonrpc==1.2
 celery==4.1.0
-distributedlock==1.2
+django-distributedlock
 lxml==4.2.1
