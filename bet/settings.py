@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #    'django.contrib.sites',
+    'distributedlock',
     'django_bitcoin',
     'tippspiel',
     'bbil',
@@ -126,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+DISTRIBUTEDLOCK_CLIENT="cache"
 
 # email send
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
