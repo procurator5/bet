@@ -73,7 +73,6 @@ def pay(request):
     recv_address = profile.wallet.receiving_address(fresh_addr=False)
 
     try:
-        print(request.POST.get("amount"))
         amount = float(request.POST.get("amount"))
     except TypeError:
         amount = 0.1
