@@ -7,5 +7,7 @@ register = template.Library()
 def user_balance(context):
     request = context['request']
     prof = Profile.objects.get(user = request.user)
-    return prof.wallet.total_balance()
-    
+    try:
+        return prof.wallet.total_balance()
+    except AttributeError:
+        return "NaN"
