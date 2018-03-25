@@ -81,7 +81,7 @@
 	{% endblock %}
 	
 {% if user.is_authenticated %}
-	<div class="slip-banner-wrapper layout--table">
+	<div class="slip-banner-wrapper layout--table" id="slip-banner-wrapper">
 	   <div>
 	      <div class="vertical-align-m">
 	         <div class="layout--table">
@@ -127,5 +127,6 @@
 <!-- Popup menu -->
 {% include "popupmenu.html" %}
 
+<div id="baseModal" class="base-modal-wrapper"></div>
 </body>
 </html>
