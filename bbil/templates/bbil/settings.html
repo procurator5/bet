@@ -45,28 +45,16 @@
             <form id="settingsForm" class="profileSettings">
                <fieldset>
                   <div class="label-block">
+                     <label for="country" class="labelTop">Имя пользователя</label>
+                     <div class="input-holder"><input id="country" name="country" disabled="disabled" class="non-editable" value="{{user.username}}" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                  </div>
+                  <div class="label-block">
                      <label class="labelTop">Валюта счета</label>
-                     <div class="input-holder"><input name="currency" disabled="disabled" class="non-editable" value="RUB" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
+                     <div class="input-holder"><input name="currency" disabled="disabled" class="non-editable" value="BTC" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
                   </div>
                   <div class="label-block">
                      <label class="labelTop">Адрес эл. почты (E-mail)</label>
-                     <div class="input-holder"><input name="email" disabled="disabled" class="non-editable" value="cpa10@yandex.ru" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
-                  </div>
-                  <div class="label-block">
-                     <label for="country" class="labelTop">Страна</label>
-                     <div class="input-holder"><input id="country" name="country" disabled="disabled" class="non-editable" value="Россия" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
-                  </div>
-                  <div class="label-block">
-                     <label class="labelTop">Город</label>
-                     <div class="input-holder"><input name="city" value="Москва" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span></div>
-                  </div>
-                  <div class="label-block">
-                     <label class="labelTop">Адрес</label>
-                     <div class="input-holder"><input name="address" value="Дмитровское шоссе, д.35, кв.4" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span><span class="error"></span></div>
-                  </div>
-                  <div class="label-block">
-                     <label class="labelTop">Контактный телефон</label>
-                     <div class="input-holder"><input name="phone" value="89096298645" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class=" validatable"><span class="error"></span></div>
+                     <div class="input-holder"><input name="email" disabled="disabled" class="non-editable" value="{{user.email}}" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
                   </div>
                </fieldset>
                <div class="label-block cb_subscribe">

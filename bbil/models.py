@@ -14,7 +14,7 @@ class Profile(models.Model):
         self.wallet, created = Wallet.objects.get_or_create(label=self.user.username)
         recv_address = self.wallet.receiving_address(fresh_addr=False)
         super(Profile, self).save(*args, **kwargs)
-    
+        
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
     if created:

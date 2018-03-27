@@ -6,10 +6,13 @@ from django.shortcuts import render, redirect
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
+from django.db.models import Sum, Count
 
 from bbil.forms import SignUpForm
 from bbil.tokens import account_activation_token
 from bbil.models import Profile
+
+from tippspiel.models import Tipp
 
 def signup(request):
     if request.method == 'POST':
@@ -59,11 +62,15 @@ def activate(request, uidb64, token):
 @login_required    
 def profile(request):
     profile =Profile.objects.get(user=request.user)
+    bet_count = Tipp.objects.filter(player=request.user, state = "In Game").all().aggregate(Count('amount'))['amount__count'] 
+    print(bet_count)
     return render(
         request,
         'bbil/profile.html',
         {
-            'wallet': profile.wallet
+            'wallet': profile.wallet,
+            'betCount': bet_count,
+            'inGame': 0 if bet_count == 0 else Tipp.objects.filter(player=request.user, state = "In Game").all().aggregate(Sum('amount'))['amount__sum'],
         },
     )
     
