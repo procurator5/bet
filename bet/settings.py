@@ -130,13 +130,12 @@ STATIC_URL = '/static/'
 DISTRIBUTEDLOCK_CLIENT="cache"
 
 # email send
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "your@gmail.com"
-EMAIL_HOST_PASSWORD = "password"
 EMAIL_USE_TLS = True
+#EMAIL_USE_SSL = True
+
 
 try:
     from bet.localsettings import *
