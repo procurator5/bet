@@ -8,7 +8,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.db.models import Sum, Count
 
-from bbil.forms import SignUpForm
+from bbil.forms import SignUpForm, BitcoinEscrow
 from bbil.tokens import account_activation_token
 from bbil.models import Profile
 
@@ -22,7 +22,6 @@ def signup(request):
             user.is_active = False
             user.save()
 
-            print(urlsafe_base64_encode(force_bytes(user.pk)))
             current_site = get_current_site(request)
             subject = 'Activate Your MySite Account'
             message = render_to_string('bbil/account_activation_email.html', {
@@ -92,6 +91,27 @@ def pay(request):
             'amount': amount,
         },
     )
+    
+@login_required
+def escrow(request):
+
+    if request.method == 'POST':
+        form = BitcoinEscrow(request.POST)
+        if form.is_valid():
+            profile =Profile.objects.get(user=request.user)
+            #WalletTransaction
+            bwt = profile.wallet.send_to_address(form.cleaned_data['bitcoin_address'], form.cleaned_data['amount'])
+            print(bwt)
+    else:
+        form = BitcoinEscrow()
+    return render(
+        request,
+        'bbil/escrow.html',
+        {
+            'form': form
+        },
+    )
+        
     
 @login_required
 def bitcoin(request):

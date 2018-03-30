@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n staticfiles %}
+{% load currency_conversions %}
+{% block body %}
+<div id="wrapper">
+   <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
+   <div class="menu menu-top menu-horizontal hidden" data-slider="true" data-level="2" data-menu-id="depositsList" style="opacity: 1;"></div>
+   <div class="menu menu-top menu-horizontal hidden" data-level="3" data-sticky="false"></div>
+   <div class="banner" style="display: none;"></div>
+   <div id="content-wrap">
+      <div class="campaign campaign--tablet" data-loc="top">
+         <div></div>
+      </div>
+      <div class="slider"></div>
+      <div id="content">
+         <div class="view visible" id="makedepositView">
+            <h1 class="title"><span class="title-holder">Депозит на счет</span></h1>
+            <div class="payment-holder">
+               <div class="depWithHolder">
+                  <div class="nav-bar">
+                     <!-- a class="button simple select-another" id="goToDepositsList">Выбрать другой... </a --> 
+                     <div class="logo-holder"> <span class="detail-image depwebmoney" style="background-image: url(https://en.bitcoin.it/w/images/en/f/fd/BC_nBG_64px.png);"></span> </div>
+                  </div>
+               </div>
+               <div id="depositForm">
+                  <form method="POST" action="#">
+                     <h1>Bitcoin</h1>
+                  <div class="hintBlock">
+                     {% csrf_token %}
+                  </div>                     
+                     <fieldset>
+                        <div class="label-block">
+                           <label class="labelTop">Вывод средств осуществляется на выбранный Вами Bitcoin-адрес: </label>
+                           <div class="input-holder">{{form.bitcoin_address}}<span class="error"></span></div>
+                        </div>
+                        <div class="label-block">
+                           <label class="labelTop">Сумма к зачислению <span class="amountCur">(BTC)</span></label>
+                           <div class="input-holder">{{form.amount}}<span class="error"></span></div>
+                        </div>
+                     </fieldset>
+                     <input type="submit" class="button" value="Зачислить">  
+                  </form>
+                  <div class="hintBlock">
+                     <br> 
+                     <!-- p><strong>Важно!</strong> Пополнение счета произойдет после подтверждения транзакции Bitcoin, что может занять некоторое время</p-->
+                     <br> 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

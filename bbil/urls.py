@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         core_views.activate, name='activate'),
     url(r'^pay/$', core_views.pay, name='pay'),
+    url(r'^escrow/$', core_views.escrow, name='escrow'),
     url(r'^bitcoin/$', core_views.bitcoin, name='bitcoin'),
     url(r'^settings/$', core_views.settings, name='settings'),
 ]
