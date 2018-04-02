@@ -96,12 +96,14 @@ def escrow(request):
     if request.method == 'POST':
         form = BitcoinEscrow(request.POST)
         if form.is_valid():
+            print("valid")
             profile =Profile.objects.get(user=request.user)
             #WalletTransaction
             bwt = profile.wallet.send_to_address(form.cleaned_data['bitcoin_address'], form.cleaned_data['amount'])
-            print(bwt)
     else:
         form = BitcoinEscrow()
+
+    print(form.errors.as_data())
     return render(
         request,
         'bbil/escrow.html',

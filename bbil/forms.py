@@ -20,7 +20,7 @@ class BitcoinEscrow(forms.Form):
         )
     
     def clean_bitcoin_address(self):
-        addr = self.cleaned_data['clean_bitcoin_address']
+        addr = self.cleaned_data['bitcoin_address']
         if not is_valid_btc_address(addr):
             raise forms.ValidationError(("Not a valid bitcoin address: %(addr)s"),
                                         params={'addr': addr},
