@@ -44,7 +44,7 @@ UNION ALL
     CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
     bwt.created_at as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
-    NULL paymentid,
+    ts.state paymentid,
     bg.bet_name AS bettype,
     bt.bet_choice || ' <span>@</span> ' || t.bet_score as betchoice
   from tippspiel_tipp t
@@ -112,7 +112,7 @@ ORDER BY 3 desc;
     CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
     bwt.created_at as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
-    NULL paymentid,
+    ts.state paymentid,
     bg.bet_name AS bettype,
     bt.bet_choice || ' <span>@</span> ' || t.bet_score as betchoice
   from tippspiel_tipp t
