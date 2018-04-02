@@ -62,7 +62,6 @@ def activate(request, uidb64, token):
 def profile(request):
     profile =Profile.objects.get(user=request.user)
     bet_count = Tipp.objects.filter(player=request.user, state = "In Game").all().aggregate(Count('amount'))['amount__count'] 
-    print(bet_count)
     return render(
         request,
         'bbil/profile.html',
@@ -70,6 +69,7 @@ def profile(request):
             'wallet': profile.wallet,
             'betCount': bet_count,
             'inGame': 0 if bet_count == 0 else Tipp.objects.filter(player=request.user, state = "In Game").all().aggregate(Sum('amount'))['amount__sum'],
+            'to_outgoing': profile.to_outgoing()
         },
     )
     

@@ -2,7 +2,8 @@ from django.db import models, connection
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-from django_bitcoin.models import Wallet, currency
+from django.db.models import Sum
+from django_bitcoin.models import Wallet, currency, WalletTransaction
 
 def dictfetchall(cursor):
     "Returns all rows from a cursor as a dict"
@@ -23,6 +24,9 @@ class Profile(models.Model):
         recv_address = self.wallet.receiving_address(fresh_addr=False)
         super(Profile, self).save(*args, **kwargs)
         
+    def to_outgoing(self):
+        return WalletTransaction.objects.filter(from_wallet=self.wallet, outgoing_transaction__txid__isnull = True, outgoing_transaction__id__isnull = False).all().aggregate(Sum('amount'))['amount__sum']     
+    
     def history(self):
         cursor = connection.cursor()
         cursor.execute("""
