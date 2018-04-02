@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div id="wrapper">
+   <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
+   <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
+      <div class="menu-inner position-fixed tab-list-current">
+         <div class="tab-list tab-list-current" data-count="3">
+            <ul>
+               <li data-id="profileGeneral" class="tab item-profileGeneral" onclick="return location.href = '{% url 'profile' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Профайл</div>
+                  </div>
+               </li>
+               <li data-id="history" class="tab item-history active">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">История</div>
+                  </div>
+               </li>
+               <li data-id="profileSettings" class="tab item-profileSettings" onclick="return location.href = '{% url 'settings' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Настройки</div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="menu menu-top menu-horizontal" data-level="3" data-sticky="false" data-menu-id="history" style="opacity: 1;">
+      <div class="menu-inner position-fixed tab-list-current">
+         <div class="tabs-nav"> <a href="#" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"></a> <a href="#" class="tabs-nav__itm tabs-nav__itm--next is-inactive"></a> </div>
+         <div class="tab-list tab-list-current" data-count="4">
+            <ul>
+               <li data-id="profileHistoryAll" class="tab item-profileHistoryAll {% if all != None %} active {% endif %}" onclick="return location.href = '{% url 'history' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Все</div>
+                  </div>
+               </li>
+               <li data-id="profileHistoryBets" class="tab item-profileHistoryBets {% if bets != None %} active {% endif %}" onclick="return location.href = '{% url 'bets' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Ставки</div>
+                  </div>
+               </li>
+               <li data-id="paymentsHistory" class="tab item-paymentsHistory {% if deposit != None %} active {% endif %}" onclick="return location.href = '{% url 'deposit' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Депозиты</div>
+                  </div>
+               </li>
+               <li data-id="withdrawalHistory" class="tab item-withdrawalHistory {% if outgoing != None %} active {% endif %}" onclick="return location.href = '{% url 'outgoing' %}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">Выплаты</div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="banner" style="display: none;"></div>
+   <div id="content-wrap">
+      <div class="campaign campaign--tablet" data-loc="top">
+         <div></div>
+      </div>
+      <div class="slider"></div>
+      <div id="content">
+         <div class="view visible" id="betsHistoryView">
+         {% for his in hisitems %}
+            <ul id="BetHistoryList" class="profileBetList list">
+               <li class="history24">
+                  <a id="374519991009238">
+                     <div class="historyDetails">
+                        <div class="historyBetDetails">
+                           <div class="out"><span>{{tipp.amount}}&nbsp;BTC</span><span class="creditdesc">Со счета</span></div>
+                           <div class="{{his.class}}">                           
+                           		<span>{{ his.amount }}</span><span class="creditdesc">На счет</span>
+                           </div>
+                        </div>
+                        <div class="listLeftHolder {{his.class}}">
+                           <div class="time">  <span class="ico-holder"></span><span>{{his.time|date:'d M o H:i'}}</span>  </div>
+                           <div class="betTitle">{{his.bettitle |safe }}</div>
+                           {% if his.paymentid != None %}
+                           <div class="paymentId" style="-webkit-user-select:text">{{his.paymentid}}</div>
+                           {% endif %}
+                           {% if his.betchoice != None %}
+                           <div class="betType">{{his.bettype}}</div>
+                           <div class="betChoice">{{his.betchoice |safe}}</div>
+                           {% endif %}
+                        </div>
+                     </div>
+                     <span class="chevron"></span>
+                  </a>
+                  <hr>
+               </li>
+              {% endfor %}
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

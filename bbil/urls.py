@@ -14,6 +14,10 @@ urlpatterns = [
         core_views.activate, name='activate'),
     url(r'^pay/$', core_views.pay, name='pay'),
     url(r'^escrow/$', core_views.escrow, name='escrow'),
-    url(r'^bitcoin/$', core_views.bitcoin, name='bitcoin'),
+    url(r'^history/$', core_views.history, name='history'),
+    url(r'^outgoing/$', core_views.outgoing, name='outgoing'),
+    url(r'^deposit/$', core_views.deposit, name='deposit'),
+    url(r'^betsHistory/$', core_views.bets, name='bets'),
     url(r'^settings/$', core_views.settings, name='settings'),
+
 ]

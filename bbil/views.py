@@ -76,8 +76,6 @@ def profile(request):
 @login_required
 def pay(request):
     profile =Profile.objects.get(user=request.user)
-    recv_address = profile.wallet.receiving_address(fresh_addr=False)
-
     try:
         amount = float(request.POST.get("amount"))
     except TypeError:
@@ -111,17 +109,59 @@ def escrow(request):
             'form': form
         },
     )
-        
-    
-@login_required
-def bitcoin(request):
+
+@login_required    
+def history(request):
+    profile =Profile.objects.get(user=request.user)
+    hisitems = profile.history()
     return render(
         request,
-        'bbil/bitcoin.html',
+        'bbil/history.html',
         {
+            'hisitems': hisitems,
+            'all': True,
         },
     )
-    
+
+@login_required    
+def outgoing(request):
+    profile =Profile.objects.get(user=request.user)
+    hisitems = profile.outgoing()
+    return render(
+        request,
+        'bbil/history.html',
+        {
+            'hisitems': hisitems,
+            'outgoing': True,
+        },
+    )
+@login_required    
+def bets(request):
+    profile =Profile.objects.get(user=request.user)
+    hisitems = profile.bets()
+    return render(
+        request,
+        'bbil/history.html',
+        {
+            'hisitems': hisitems,
+            'bets': True,
+        },
+    )
+
+
+@login_required    
+def deposit(request):
+    profile =Profile.objects.get(user=request.user)
+    hisitems = profile.deposit()
+    return render(
+        request,
+        'bbil/history.html',
+        {
+            'hisitems': hisitems,
+            'deposit': True,
+        },
+    )
+
 
 @login_required
 def settings(request):
