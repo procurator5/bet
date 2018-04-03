@@ -44,7 +44,7 @@ SELECT 'in' as class, dt.amount, dt.created_at as time, 'Зачисление&nb
   WHERE user_id = %s
 UNION ALL
   select 
-    CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN 'non' ELSE 'in' END AS class,
+    CASE WHEN ts.state = 'InGame' THEN 'non' WHEN ts.state = 'Lose' THEN 'los' ELSE 'in' END AS class,
     CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
     bwt.created_at as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
@@ -112,7 +112,7 @@ ORDER BY 3 desc;
   
 )
   select 
-    CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN 'non' ELSE 'in' END AS class,
+    CASE WHEN ts.state = 'InGame' THEN 'non' WHEN ts.state = 'Lose' THEN 'los' ELSE 'in' END AS class,
     CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
     bwt.created_at as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
