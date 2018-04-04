@@ -45,7 +45,7 @@ SELECT 'in' as class, dt.amount, dt.created_at as time, 'Зачисление&nb
 UNION ALL
   select 
     CASE WHEN ts.state = 'InGame' THEN 'non' WHEN ts.state = 'Lose' THEN 'los' ELSE 'in' END AS class,
-    CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
+    CASE WHEN ts.state = 'InGame' THEN -bwt.amount WHEN ts.state = 'Lose' THEN 0 ELSE bwt.amount END AS amount,
     bwt.created_at as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
     ts.state paymentid,
@@ -55,7 +55,7 @@ UNION ALL
   join bbil_profile p ON t.player_id = p.user_id
   join last_state ls ON ls.tipp_id = t.id
   join tippspiel_tippstate ts ON ls.id = ts.id
-  join django_bitcoin_wallettransaction bwt ON bwt.id = ts.transaction_id
+  left join django_bitcoin_wallettransaction bwt ON bwt.id = ts.transaction_id
   join tippspiel_match m on t.match_id = m.id
   join tippspiel_team home ON home.id = m.team_home_id
   join tippspiel_team visitor ON visitor.id = m.team_visitor_id
@@ -113,7 +113,7 @@ ORDER BY 3 desc;
 )
   select 
     CASE WHEN ts.state = 'InGame' THEN 'non' WHEN ts.state = 'Lose' THEN 'los' ELSE 'in' END AS class,
-    CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
+    CASE WHEN ts.state = 'InGame' THEN -bwt.amount WHEN ts.state = 'Lose' THEN 0 ELSE bwt.amount END AS amount,
     bwt.created_at as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
     ts.state paymentid,
@@ -123,7 +123,7 @@ ORDER BY 3 desc;
   join bbil_profile p ON t.player_id = p.user_id
   join last_state ls ON ls.tipp_id = t.id
   join tippspiel_tippstate ts ON ls.id = ts.id
-  join django_bitcoin_wallettransaction bwt ON bwt.id = ts.transaction_id
+  left join django_bitcoin_wallettransaction bwt ON bwt.id = ts.transaction_id
   join tippspiel_match m on t.match_id = m.id
   join tippspiel_team home ON home.id = m.team_home_id
   join tippspiel_team visitor ON visitor.id = m.team_visitor_id
