@@ -32,7 +32,7 @@ def signup(request):
             })
             user.email_user(subject, message)
 
-            return redirect('account_activation_sent')
+            return redirect('tippspiel_match_list')
     else:
         form = SignUpForm()
     return render(request, 'bbil/signup.html', {'form': form})
@@ -167,10 +167,12 @@ def deposit(request):
 @login_required
 def settings(request):
     errors = []
+    form = SignUpForm()
     return render(
         request,
         'bbil/settings.html',
         {
-            'errors': errors
+            'errors': errors,
+            'form': form,
         },
     )

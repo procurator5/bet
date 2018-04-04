@@ -44,10 +44,21 @@
             <div class="errors"></div>
             <form id="settingsForm" class="profileSettings">
                <fieldset>
-                  <div class="label-block">
+               
+               {% for field in form %}
+    			<div class="label-block">
+        			{{ field.errors }}
+        			<label class="labelTop" for="{{ field.name }}">{{ field.label }}</label>
+        			<div class="input-holder">
+        			 	{{ field }}
+        			 </div>
+    			</div>
+				{% endfor %}
+                  <!-- div class="label-block">
                      <label for="country" class="labelTop">Имя пользователя</label>
                      <div class="input-holder"><input id="country" name="country" disabled="disabled" class="non-editable" value="{{user.username}}" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
                   </div>
+                  
                   <div class="label-block">
                      <label class="labelTop">Валюта счета</label>
                      <div class="input-holder"><input name="currency" disabled="disabled" class="non-editable" value="BTC" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
@@ -55,12 +66,8 @@
                   <div class="label-block">
                      <label class="labelTop">Адрес эл. почты (E-mail)</label>
                      <div class="input-holder"><input name="email" disabled="disabled" class="non-editable" value="{{user.email}}" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
-                  </div>
+                  </div-->
                </fieldset>
-               <div class="label-block cb_subscribe">
-                  <input name="subscribe" type="checkbox"> <label class="cb-label fl"></label> 
-                  <p> Я согласен получать новостную рассылку со специальными предложениями и бонусами. </p>
-               </div>
                <a id="settingsSubmit" class="button">Сохранить</a> <input type="submit" class="hiddenButton"> 
             </form>
             <div class="profileSettings">
@@ -70,29 +77,10 @@
                      <a id="changePass">Изменение пароля<span class="chevron"></span></a>
                      <hr>
                   </li>
-                  <li>
-                     <a id="verification">Верификация счета<span class="chevron"></span></a>
-                     <hr>
-                  </li>
-                  <li>
-                     <a id="two-factor-auth">Двухэтапная аутентификация<span class="chevron"></span></a>
-                     <hr>
-                  </li>
                </ul>
             </div>
          </div>
       </div>
-      <div class="campaign campaign--tablet" data-loc="bottom" style="">
-         <div></div>
-      </div>
-      <footer id="footer">
-         <ul class="footer-links">
-            <li class="footer-contact ico-holder"> Контакты </li>
-            <li class="footer-desk ico-holder"> На основной сайт </li>
-            <li class="footer-terms ico-holder">  Условия и Положения  </li>
-            <li class="footer-rules ico-holder"> Правила </li>
-         </ul>
-      </footer>
    </div>
 </div>
 

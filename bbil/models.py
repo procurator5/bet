@@ -18,6 +18,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email_confirmed = models.BooleanField(default=False)
     wallet = models.ForeignKey("django_bitcoin.Wallet", on_delete=models.DO_NOTHING, null=True)
+    timezone = models.CharField(max_length=64, default="Europe/London")
+    currency=models.CharField(max_length=6, default="BTC")
     # this is not needed if small_image is created at set_image
     def save(self, *args, **kwargs):
         self.wallet, created = Wallet.objects.get_or_create(label=self.user.username)

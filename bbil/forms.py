@@ -2,14 +2,20 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django_bitcoin.BCAddressField import is_valid_btc_address
+from django_bitcoin.models import currencies 
+import pytz
 
 
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.', label='E-mail:')
+    timezone = forms.ChoiceField(choices=[(x, x) for x in pytz.common_timezones], label='Tour time zone:')
+    currency = forms.ChoiceField(choices=currencies, label="Account's currency")
+    
+    email.widget.attrs.update({'class': 'labelTop'})
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2' )
+        fields = ('username', )
         
         
 class BitcoinEscrow(forms.Form):
