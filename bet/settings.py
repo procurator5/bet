@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 #    'django.contrib.sites',
+    'djorm_pgfulltext',
     'distributedlock',
     'django_bitcoin',
     'tippspiel',

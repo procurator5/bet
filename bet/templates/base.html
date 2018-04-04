@@ -32,7 +32,8 @@
 		</div> 
 		<div class="tab-list tab-list-current" data-count="2">
 			<ul>  
-				<li data-id="bets" class="tab item-bets active"> 
+			{% url 'search' as search %}			
+				<li data-id="bets" class="tab item-bets  {% if request.get_full_path != search %}active{% endif %}"> 
 					<div class="tab-inner"> 
 					<a href="/" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"> 
 					
@@ -41,9 +42,11 @@
 						<div class="text">Ставки</div> 
 					</div> 
 				</li>  
-				<li data-id="search" class="tab item-search"> 
+				<li data-id="search" class="tab item-search {% if request.get_full_path == search %}active{% endif %}"> 
 					<div class="tab-inner"> 
-						<span class="ico-holder"></span> 
+						<a href="{% url 'search' %}" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"> 
+							<span class="ico-holder"></span> 
+						</a>
 							<div class="text">Поиск</div> 
 					</div> 
 				</li> 
