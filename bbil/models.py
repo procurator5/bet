@@ -46,7 +46,7 @@ UNION ALL
   select 
     CASE WHEN ts.state = 'InGame' THEN 'non' WHEN ts.state = 'Lose' THEN 'los' ELSE 'in' END AS class,
     CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
-    bwt.created_at as time,
+    t.date as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
     ts.state paymentid,
     bg.bet_name AS bettype,
@@ -114,7 +114,7 @@ ORDER BY 3 desc;
   select 
     CASE WHEN ts.state = 'InGame' THEN 'non' WHEN ts.state = 'Lose' THEN 'los' ELSE 'in' END AS class,
     CASE WHEN ts.state = 'InGame' OR ts.state = 'Lose' THEN -bwt.amount ELSE bwt.amount END AS amount,
-    bwt.created_at as time,
+    t.date as time,
     home.name || ' - ' || visitor.name || case when m.finished THEN ' (' || m.score_home|| ' : ' || m.score_visitor || ')' ELSE '' END AS bettitle,
     ts.state paymentid,
     bg.bet_name AS bettype,
