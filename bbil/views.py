@@ -8,7 +8,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.db.models import Sum, Count
 
-from bbil.forms import SignUpForm, BitcoinEscrow
+from bbil.forms import SignUpForm, BitcoinEscrow, ChangeProfileForm
 from bbil.tokens import account_activation_token
 from bbil.models import Profile
 
@@ -166,13 +166,29 @@ def deposit(request):
 
 @login_required
 def settings(request):
-    errors = []
-    form = SignUpForm()
+    form = ChangeProfileForm(initial={'username': request.user.username, 
+                                   'email': request.user.email, 
+                                   #'password1': request.user.password1, 
+                                   #'password2': request.user.password2,
+                                   'timezone': request.user.profile.timezone,
+                                   'currency': request.user.profile.currency,
+                                   }
+                          ) 
+    form.fields['username'].widget.attrs['readonly'] = True
+
+    if request.method == 'POST':
+        form = ChangeProfileForm(request.POST)
+        if form.is_valid():
+            request.user.profile.timezone = form.cleaned_data['timezone']
+            request.user.profile.currency = form.cleaned_data['currency']
+            request.user.profile.save()
+            request.user.email = form.cleaned_data['email']
+            request.user.save()
+    
     return render(
         request,
         'bbil/settings.html',
         {
-            'errors': errors,
             'form': form,
         },
     )

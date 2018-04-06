@@ -31,8 +31,6 @@
          </div>
       </div>
    </div>
-   <div class="menu menu-top menu-horizontal hidden" data-level="3" data-sticky="false" data-menu-id="history" style="opacity: 1;"></div>
-   <div class="banner" style="display: none;"></div>
    <div id="content-wrap">
       <div class="campaign campaign--tablet" data-loc="top">
          <div></div>
@@ -41,12 +39,17 @@
       <div id="content">
          <div class="view visible" id="settingsView">
             <h1 class="title"><span class="title-holder">Изменение личных данных</span></h1>
-            <div class="errors"></div>
-            <form id="settingsForm" class="profileSettings">
+            <div class="errors">
+            <p>
+            	{{ form.errors }}
+				{{ form.non_field_errors }}
+			</p>            
+            </div>
+            <form id="settingsForm" class="profileSettings" method="post">            
                <fieldset>
-               
-               {% for field in form %}
-    			<div class="label-block">
+				{% csrf_token %} 
+               	{% for field in form %}
+    			<div class="label-block" id="{{ field.name }}">
         			{{ field.errors }}
         			<label class="labelTop" for="{{ field.name }}">{{ field.label }}</label>
         			<div class="input-holder">
@@ -54,21 +57,8 @@
         			 </div>
     			</div>
 				{% endfor %}
-                  <!-- div class="label-block">
-                     <label for="country" class="labelTop">Имя пользователя</label>
-                     <div class="input-holder"><input id="country" name="country" disabled="disabled" class="non-editable" value="{{user.username}}" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
-                  </div>
-                  
-                  <div class="label-block">
-                     <label class="labelTop">Валюта счета</label>
-                     <div class="input-holder"><input name="currency" disabled="disabled" class="non-editable" value="BTC" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
-                  </div>
-                  <div class="label-block">
-                     <label class="labelTop">Адрес эл. почты (E-mail)</label>
-                     <div class="input-holder"><input name="email" disabled="disabled" class="non-editable" value="{{user.email}}" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
-                  </div-->
                </fieldset>
-               <a id="settingsSubmit" class="button">Сохранить</a> <input type="submit" class="hiddenButton"> 
+            <!-- Registration button --> <input type="submit" id="regButton" class="button" value="Сохранить"> <!-- END of Registration button -->               
             </form>
             <div class="profileSettings">
                <h1 class="title"><span class="title-holder">Настройки безопасности</span></h1>
@@ -83,5 +73,4 @@
       </div>
    </div>
 </div>
-
 {% endblock %}

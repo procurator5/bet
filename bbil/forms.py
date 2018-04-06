@@ -1,22 +1,36 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django_bitcoin.BCAddressField import is_valid_btc_address
-from django_bitcoin.models import currencies 
 import pytz
 
+currencies = (
+    ("USD", "USD"),
+    ("EUR", "EUR"),
+    ("BTC", "BTC")
+)
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.', label='E-mail:')
     timezone = forms.ChoiceField(choices=[(x, x) for x in pytz.common_timezones], label='Tour time zone:')
     currency = forms.ChoiceField(choices=currencies, label="Account's currency")
     
-    email.widget.attrs.update({'class': 'labelTop'})
-
     class Meta:
         model = User
-        fields = ('username', )
+        fields = ('username', 'email', 'password1', 'password2' )
         
+class ChangeProfileForm(forms.Form):
+    username = forms.CharField(max_length=64, label='Username:')
+    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.', label='E-mail:')
+    timezone = forms.ChoiceField(choices=[(x, x) for x in pytz.common_timezones], label='Your time zone:')
+    currency = forms.ChoiceField(choices=currencies, label="Account's currency")
+    
+    class Meta:
+        model = User
+        fields = ('username', 'email', )
+        exclude = ('password1','password2',)
+        
+
         
 class BitcoinEscrow(forms.Form):
     bitcoin_address = forms.CharField()

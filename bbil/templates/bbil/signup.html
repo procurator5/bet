@@ -18,24 +18,15 @@
          <form autocomplete="off" method="post">
              {% csrf_token %}
             <fieldset>
-               <h4>Личная информация</h4>
-               <div class="label-block">
-                  <label class="labelTop">Имя пользователя</label>
-                  <div class="input-holder">{{form.username}}<span class="error">{{ form.username.errors }}</span></div>
-               </div>
-               <h4>Данные счета</h4>
-               <div class="label-block">
-                  <label class="labelTop">E-mail</label>
-                  <div class="input-holder">{{form.email}}<span class="error">{{ form.email.errors }}</span></div>
-               </div>
-               <div class="label-block">
-                  <label class="labelTop">Пароль (минимум 8 символов)</label>
-                  <div class="input-holder"><i class="eye ico-holder"></i>{{form.password1}}<span class="error">{{ form.password1.errors }}</span></div>
-               </div>
-               <div class="label-block">
-                  <label class="labelTop">Повторите пароль</label>
-                  <div class="input-holder"><i class="eye ico-holder"></i>{{form.password2}}<span class="error">{{ form.password1.errors }}</span></div>
-               </div>
+               {% for field in form %}
+    			<div class="label-block" id="{{ field.name }}">
+        			{{ field.errors }}
+        			<label class="labelTop" for="{{ field.name }}">{{ field.label }}</label>
+        			<div class="input-holder">
+        			 	{{ field }}
+        			 </div>
+    			</div>
+				{% endfor %}
                <p class="hint">Пароль должен содержать как минимум одну букву и одну цифру.</p>
                <!--  div class="leonru-phone-holder">
                   <p><strong>ВАЖНО!</strong> На этот Bitcoin кошелек будет отправлен
