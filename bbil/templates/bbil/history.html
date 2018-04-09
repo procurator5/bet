@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
 
+{% load currency_conversions %}
+
 <div id="wrapper">
    <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
    <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
@@ -76,9 +78,9 @@
                   <a id="374519991009238">
                      <div class="historyDetails">
                         <div class="historyBetDetails">
-                           <div class="out"><span>{{tipp.amount}}&nbsp;BTC</span><span class="creditdesc">Со счета</span></div>
+                           <div class="out"><span>{{his.amount | btc2currency:user.profile.currency }}&nbsp;{{user.profile.currency}}</span><span class="creditdesc">Со счета</span></div>
                            <div class="{{his.class}}">                           
-                           		<span>{{ his.amount }}</span><span class="creditdesc">На счет</span>
+                           		<span>{{his.amount | btc2currency:user.profile.currency }}&nbsp;{{user.profile.currency}}</span><span class="creditdesc">На счет</span>
                            </div>
                         </div>
                         <div class="listLeftHolder {{his.class}}">

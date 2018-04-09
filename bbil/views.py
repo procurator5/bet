@@ -12,7 +12,10 @@ from bbil.forms import SignUpForm, BitcoinEscrow, ChangeProfileForm
 from bbil.tokens import account_activation_token
 from bbil.models import Profile
 
+from django_bitcoin import  currency
+
 from tippspiel.models import Tipp
+import decimal
 
 def signup(request):
     if request.method == 'POST':
@@ -77,9 +80,10 @@ def profile(request):
 def pay(request):
     profile =Profile.objects.get(user=request.user)
     try:
-        amount = float(request.POST.get("amount"))
-    except TypeError:
-        amount = 0.1
+        amount = decimal.Decimal(request.POST.get("amount"))
+        amount = currency.currency2btc(amount, profile.currency)
+    except decimal.InvalidOperation:
+        amount = 0.001
 
     return render(
         request,
@@ -98,7 +102,8 @@ def escrow(request):
         if form.is_valid():
             profile =Profile.objects.get(user=request.user)
             #WalletTransaction
-            bwt = profile.wallet.send_to_address(form.cleaned_data['bitcoin_address'], form.cleaned_data['amount'])
+            amount = currency.currency2btc(form.cleaned_data['amount'], profile.currency)
+            bwt = profile.wallet.send_to_address(form.cleaned_data['bitcoin_address'], amount)
             return redirect('outgoing')            
     else:
         form = BitcoinEscrow()
