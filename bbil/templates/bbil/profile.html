@@ -2,6 +2,8 @@
 {% load i18n staticfiles %}
 {% load activepage %}
 {% block body %}
+{% load currency_conversions %}
+
 <div id="wrapper">
    <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
    <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
@@ -43,7 +45,7 @@
             <div class="accHolder">
                <h3>Мой счет</h3>
                <div class="accNum"><span>Номер счёта:</span>&nbsp;{{wallet.receiving_address}}</div>
-               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">Депозит</a> <span>Баланс:</span> {{wallet.total_balance}} BTC </div>
+               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">Депозит</a> <span>Баланс:</span> {{wallet.total_balance | btc2currency:user.profile.currency}}  {{ user.profile.currency }} </div>
                <ul class="accDetails">
                   <li id="accDetailsWtb" class="al"> <span>В игре</span>
                   {% if betCount > 0 %}
@@ -51,8 +53,8 @@
                   {% else %} 
                   	<span class="waitingAmount ico-holder blank">0</span>
                   {% endif %} 
-                  	<span class="accAmount">{{ inGame }} BTC</span> </li>
-                  <li id="accDetailsWdr" class="ar"> <span>Запрошено к выплате</span> <span class="waitingPayout ico-holder">...</span> <span class="accAmount">{{to_outgoing}} BTC</span> </li>
+                  	<span class="accAmount">{{ inGame | btc2currency:user.profile.currency }} {{ user.profile.currency }}</span> </li>
+                  <li id="accDetailsWdr" class="ar"> <span>Запрошено к выплате</span> <span class="waitingPayout ico-holder">...</span> <span class="accAmount">{{to_outgoing | btc2currency:user.profile.currency}}  {{ user.profile.currency }}</span> </li>
                </ul>
                <ul class="list iconized wide">
                   <li>

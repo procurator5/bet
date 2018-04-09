@@ -70,8 +70,11 @@
          <div></div>
       </div>
       <div class="slider"></div>
+      
       <div id="content">
          <div class="view visible" id="betsHistoryView">
+		{% load tz %}
+		{% timezone user.profile.timezone %}         
          {% for his in hisitems %}
             <ul id="BetHistoryList" class="profileBetList list">
                <li class="history24">
@@ -100,6 +103,7 @@
                   <hr>
                </li>
               {% endfor %}
+              {% endtimezone %}
             </ul>
          </div>
       </div>
