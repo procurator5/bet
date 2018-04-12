@@ -39,7 +39,7 @@
 					
 						<span class="ico-holder"></span> 
 					</a>
-						<div class="text">Ставки</div> 
+						<div class="text">{% trans 'Bets' %}</div> 
 					</div> 
 				</li>  
 				<li data-id="search" class="tab item-search {% if request.get_full_path == search %}active{% endif %}"> 
@@ -47,7 +47,7 @@
 						<a href="{% url 'search' %}" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"> 
 							<span class="ico-holder"></span> 
 						</a>
-							<div class="text">Поиск</div> 
+							<div class="text">{% trans 'Search' %}</div> 
 					</div> 
 				</li> 
 			</ul>  
@@ -71,12 +71,14 @@
 	{% else %}
       <div id="slipBox" class="">
          <div id="slipTitle" class="empty">
-            <h1>В игре (0)</h1>
+            <h1>{% trans "In Game" %} (0)</h1>
             <span id="slipClose" class="slipClose ico-holder"></span> 
          </div>
          <div id="slipHolder">
             <div id="slipData">
-               <p><b>Ставки не выбраны.</b> Чтобы выбрать ставку, кликните соответствующий коэффициент.</p>
+            {% blocktrans %}
+               <p><b>No bids were selected. </b> To select a bet, click the appropriate odds.</p>
+            {% endblocktrans %}
             </div>
          </div>
       </div>
@@ -91,8 +93,8 @@
 	            <div>
 	               <div class="dtc text-center bet-sell-col"> <i class="icon-bet-sell"></i> </div>
 	               <div class="vertical-align-m text-left">
-	                  <div class="h4">Продажа ставок</div>
-	                  <div class="h5">Досрочный расчет ставки</div>
+	                  <div class="h4">{% trans "Selling bets" %}</div>
+	                  <div class="h5">{% trans "Early calculation of the bet" %}</div>
 	               </div>
 	            </div>
 	         </div>
@@ -104,20 +106,20 @@
 	</div>
 	<div class="slipLinks">
 	   <ul>
-	      <li><a class="slip-dep-link" href="{% url 'pay' %}">Пополнить счёт</a></li>
-	      <li><a class="slip-payout-link" href="{% url 'escrow' %}">Получить выплату</a></li>
-	      <li><a class="slip-bethistor-link" href="{% url 'bets' %}">История ставок</a></li>
+	      <li><a class="slip-dep-link" href="{% url 'pay' %}">{% trans "Deposit to account" %}</a></li>
+	      <li><a class="slip-payout-link" href="{% url 'escrow' %}">{% trans "Get paid" %} </a></li>
+	      <li><a class="slip-bethistor-link" href="{% url 'bets' %}">{% trans "Bet's history" %}</a></li>
 	   </ul>
 	</div>   
 
 {% else %}
       <div class="waitingBets">
-         <h1 class="hidden">Неразыгранные ставки</h1>
+         <h1 class="hidden">{% trans "Unreplayed bets" %} </h1>
          <ul id="Z_1" class=""></ul>
       </div>
       <div class="slipLinks">
          <ul>
-            <li><a href="{% url 'signup' %}" class="slip-reg-link">Зарегистрироваться</a></li>
+            <li><a href="{% url 'signup' %}" class="slip-reg-link">{% trans "Sign Up" %}</a></li>
          </ul>
       </div>
       <div class="campaign--tablet" data-loc="custom"></div>
