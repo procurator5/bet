@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-12 10:59+0000\n"
+"POT-Creation-Date: 2018-04-12 15:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,91 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: bet/templates/base.html:42 bet/templates/popupmenu.html:27
+msgid "Bets"
+msgstr "Ставки"
+
+#: bet/templates/base.html:50 bet/templates/popupmenu.html:28
+msgid "Search"
+msgstr "Поиск"
+
+#: bet/templates/base.html:74
+msgid "In Game"
+msgstr "В игре"
+
+#: bet/templates/base.html:79
+msgid ""
+"\n"
+"               <p><b>No bids were selected. </b> To select a bet, click the "
+"appropriate odds.</p>\n"
+"            "
+msgstr ""
+"\n"
+"               <p><b>Ставки не выбраны. </b> Чтобы выбрать ставку кликните "
+"соответствующий коэффициент.</p>\n"
+"            "
+
+
+#: bet/templates/base.html:96
+msgid "Selling bets"
+msgstr "Продажа ставок"
+
+#: bet/templates/base.html:97
+msgid "Early calculation of the bet"
+msgstr "Предварительный рпасчет ставки"
+
+#: bet/templates/base.html:109 bet/templates/popupmenu.html:11
+msgid "Deposit to account"
+msgstr "Пополнить счет"
+
+#: bet/templates/base.html:110
+msgid "Get paid"
+msgstr "Получить выплату"
+
+#: bet/templates/base.html:111
+msgid "Bet's history"
+msgstr "История ставок"
+
+#: bet/templates/base.html:117
+msgid "Unreplayed bets"
+msgstr "Неразыгранные ставки"
+
+#: bet/templates/base.html:122 bet/templates/header.html:30
+#: bet/templates/popupmenu.html:24
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: bet/templates/header.html:16
+msgid "Deposit"
+msgstr "Депозит"
+
+#: bet/templates/header.html:25 bet/templates/login_form.html:14
+msgid "Enter"
+msgstr "Вход"
+
+#: bet/templates/login_form.html:9
+msgid "User name"
+msgstr "Имя пользователя"
+
+#: bet/templates/login_form.html:16
+msgid "Reset password"
+msgstr "Восстановиь пароль"
+
+#: bet/templates/popupmenu.html:6
+#: django-bitcoin/django_bitcoin/templates/wallet_tagline.html:2
+msgid "Balance"
+msgstr "Баланс"
+
+#: bet/templates/popupmenu.html:16
+msgid ""
+"\n"
+"\t\t\t\t Sign in <span> or register</span> </div>\n"
+"\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t Войдите <span> или зарегистрируйтесь</span> </div>\n"
+"\t\t\t"
 
 #: bet/templates/registration/password_change_done.html:10
 msgid "Your password was changed."
@@ -32,14 +117,17 @@ msgstr "Ваш пароль изменен. Вы можете войти на с
 msgid ""
 "We've emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
-msgstr "Мы отправили Вам инструкции по сбросу пароля на email, который вы ввели. Письмо придет к вам в ближайшее время"
+msgstr ""
+"Мы отправили Вам инструкции по сбросу пароля на email, который вы ввели. "
+"Письмо придет к вам в ближайшее время"
 
 #: bet/templates/registration/password_reset_done.html:11
 msgid ""
 "If you don't receive an email, please make sure you've entered the address "
 "you registered with, and check your spam folder."
-msgstr "Если Вы не получили письмо, пожалуйста проверьте что введенный email адрес"
-"совпадает с введенным при регистрации и проверьте папку 'Спам'"
+msgstr ""
+"Если Вы не получили письмо, пожалуйста проверьте что введенный email "
+"адрессовпадает с введенным при регистрации и проверьте папку 'Спам'"
 
 #: django-bitcoin/django_bitcoin/models.py:685
 msgid "Can't send to self-wallet"
@@ -112,7 +200,3 @@ msgstr "Сеть bitcoin"
 #: django-bitcoin/django_bitcoin/templates/wallet_history.html:51
 msgid "Fee paid directly to the bitcoin network"
 msgstr "Вознаграждение за транзакцию bitcoin сети"
-
-#: django-bitcoin/django_bitcoin/templates/wallet_tagline.html:2
-msgid "Balance"
-msgstr "Баланс"

@@ -1,3 +1,4 @@
+{% load i18n %}
 <div id="loginPopup" style="display: none;">
    <div id="loginPopupInner">
       <span class="up"></span> <span class="closePopup ico-holder" id="btn-close"></span> 
@@ -5,14 +6,14 @@
       	<form method="post" action="{% url 'login' %}">
       	 {% csrf_token %}
          <div class="label-block">
-            <div class="input-holder"><input name="username" type="text" autocomplete="off" autocorrect="off" placeholder="Имя пользователя" autocapitalize="off" spellcheck="false" class="validatable"><span class="error"></span></div>
+            <div class="input-holder"><input name="username" type="text" autocomplete="off" autocorrect="off" placeholder="{% trans "User name" %}" autocapitalize="off" spellcheck="false" class="validatable"><span class="error"></span></div>
          </div>
          <div class="label-block">
             <div class="input-holder"><i class="eye ico-holder"></i><input class="password validatable" type="password" name="password" autocomplete="off" autocorrect="off" placeholder="Пароль" autocapitalize="off" spellcheck="false"><span class="error"></span><span class="error"></span></div>
          </div>
-         <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="Вход"> </div>
+         <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="{% trans "Enter" %}"> </div>
          </form>
-         <a id="pwdRecovery" href="{% url 'password_reset' %}">Восстановление пароля</a> 
+         <a id="pwdRecovery" href="{% url 'password_reset' %}">{% trans "Reset password" %}</a> 
       </div>
    </div>
 </div>
