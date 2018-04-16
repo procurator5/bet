@@ -37,7 +37,7 @@
                            {% if user.profile.currency == 'BTC' %}
                            <div class="input-holder"><input min="{{0.0001|btc2currency:user.profile.currency}}" pattern="[0-9]*" inputmode="numeric" type="number" name="amount" class="depwebmoney validatable" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span class="error"></span></div>
                            {% else %}
-                           <div class="input-holder"><input min="{{0.0001|btc2currency:user.profile.currency}}" pattern="[0-9]*" inputmode="numeric" type="number" name="amount" class="depwebmoney validatable" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" step="0.01"><span class="error"></span></div>
+                           <div class="input-holder"><input min="0" pattern="[0-9]*" inputmode="numeric" type="number" name="amount" class="depwebmoney validatable" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" step="0.01"><span class="error"></span></div>
                            {%endif%}
                         </div>
                      {% csrf_token %}

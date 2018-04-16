@@ -80,7 +80,7 @@ def profile(request):
 def pay(request):
     profile =Profile.objects.get(user=request.user)
     try:
-        amount = decimal.Decimal(request.POST.get("amount"))
+        amount = decimal.Decimal(0 if request.POST.get("amount") == None else request.POST.get("amount"))
         amount = currency.currency2btc(amount, profile.currency)
     except decimal.InvalidOperation:
         amount = 0.001
