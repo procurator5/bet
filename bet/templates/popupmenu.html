@@ -1,23 +1,51 @@
 {% load user_profile i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
 <div id="sidemenu">
 {% if user.is_authenticated %}  
-<div class="sidemenu">
+<div class="sidemenu langSelection">
    <div class="sidemenuProfile">
-      <div class="ico-holder sett-holder"> {{ user.get_username }} <span>{% trans "Balance" %}:  <span id="balanceSidemenu">{% user_balance %}&nbsp;BTC</span>  </span> </div>
+      <div class="ico-holder sett-holder"> {{ user.get_username }} <span>{% trans "Balance" %}:  <span id="balanceSidemenu">{% user_balance %}</span>  </span> </div>
       <span class="ico-holder settings" onclick="return location.href = '{% url 'settings' %}'"></span> 
    </div>
+
+      <a class="langSection" href="#"> <span class="down"></span> <span class="langName" data-lang="{{LANGUAGE_CODE}}"></span> </a> 
+      <ul class="langselect">
+        {% for code, name_local in LANGUAGES %}
+         <li>
+         	<form id='lang_{{ code }}' action='/i18n/setlang/' method='POST'>
+         		{% csrf_token %}
+				<input type='hidden' name='language' value='{{ code }}'/>
+         		<a data-lang="{{ code }}" onclick="document.getElementById('lang_{{ code }}').submit()">{{ name_local }}</a></li>
+         	</form>
+        {% endfor %}
+      </ul>   
 </div>
 	<ul class="menuNav sideNav">  
 		<li><a class="ico-holder deposit" href="{% url 'pay' %}">{% trans "Deposit to account" %}</a></li>
 {% else %}	
-	<div class="sidemenu"> 
+	<div class="sidemenu langSelection"> 
 		<div class="sidemenuLogin"> 
 			<div class="ico-holder login-holder">
 			{% blocktrans %}
 				 Sign in <span> or register</span> </div>
 			{% endblocktrans %} 
-			<span class="chevron"></span> 
-		</div>   
+			<span class="chevron"></span> 			
+		</div> 
+
+      <a class="langSection" href="#"> <span class="down"></span> <span class="langName" data-lang="{{LANGUAGE_CODE}}"></span> </a> 
+      <ul class="langselect">
+        {% for code, name_local in LANGUAGES %}
+         <li>
+         	<form id='lang_{{ code }}' action='/i18n/setlang/' method='POST'>
+         		{% csrf_token %}
+				<input type='hidden' name='language' value='{{ code }}'/>
+         		<a data-lang="{{ code }}" onclick="document.getElementById('lang_{{ code }}').submit()">{{ name_local }}</a></li>
+         	</form>
+        {% endfor %}
+      </ul>
+		  
 	</div>  
 	<ul class="menuNav sideNav">  
 		<li>
@@ -41,6 +69,17 @@ $('#btn-menu').bind('click', function() {
 		$('html').attr('data-sidebar', 'hidden');
 		$("#screen_locker").remove()
 	})
+});
+
+$('a.langSection').bind('click', function(){
+	if($('ul.langselect').hasClass('open')){
+		$('ul.langselect').removeClass('open');
+		$('span.up').attr('class', 'down');
+		
+	}else{
+		$('ul.langselect').addClass('open');
+		$('span.down').attr('class', 'up');
+	}
 });
 </script>
 

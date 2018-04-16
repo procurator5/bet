@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-12 15:07+0000\n"
+"POT-Creation-Date: 2018-04-16 13:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: bet/templates/base.html:42 bet/templates/popupmenu.html:27
+#: bet/templates/base.html:42 bet/templates/popupmenu.html:55
 msgid "Bets"
 msgstr "Ставки"
 
-#: bet/templates/base.html:50 bet/templates/popupmenu.html:28
+#: bet/templates/base.html:50 bet/templates/popupmenu.html:56
 msgid "Search"
 msgstr "Поиск"
 
@@ -44,7 +44,6 @@ msgstr ""
 "соответствующий коэффициент.</p>\n"
 "            "
 
-
 #: bet/templates/base.html:96
 msgid "Selling bets"
 msgstr "Продажа ставок"
@@ -53,7 +52,7 @@ msgstr "Продажа ставок"
 msgid "Early calculation of the bet"
 msgstr "Предварительный рпасчет ставки"
 
-#: bet/templates/base.html:109 bet/templates/popupmenu.html:11
+#: bet/templates/base.html:109 bet/templates/popupmenu.html:26
 msgid "Deposit to account"
 msgstr "Пополнить счет"
 
@@ -69,16 +68,16 @@ msgstr "История ставок"
 msgid "Unreplayed bets"
 msgstr "Неразыгранные ставки"
 
-#: bet/templates/base.html:122 bet/templates/header.html:30
-#: bet/templates/popupmenu.html:24
+#: bet/templates/base.html:122 bet/templates/header.html:47
+#: bet/templates/popupmenu.html:52
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: bet/templates/header.html:16
+#: bet/templates/header.html:33
 msgid "Deposit"
 msgstr "Депозит"
 
-#: bet/templates/header.html:25 bet/templates/login_form.html:14
+#: bet/templates/header.html:42 bet/templates/login_form.html:14
 msgid "Enter"
 msgstr "Вход"
 
@@ -90,12 +89,12 @@ msgstr "Имя пользователя"
 msgid "Reset password"
 msgstr "Восстановиь пароль"
 
-#: bet/templates/popupmenu.html:6
+#: bet/templates/popupmenu.html:9
 #: django-bitcoin/django_bitcoin/templates/wallet_tagline.html:2
 msgid "Balance"
 msgstr "Баланс"
 
-#: bet/templates/popupmenu.html:16
+#: bet/templates/popupmenu.html:31
 msgid ""
 "\n"
 "\t\t\t\t Sign in <span> or register</span> </div>\n"
@@ -104,6 +103,16 @@ msgstr ""
 "\n"
 "\t\t\t\t Войдите <span> или зарегистрируйтесь</span> </div>\n"
 "\t\t\t"
+
+#: bet/templates/registration/password_change.html:6
+#, fuzzy
+#| msgid "Reset password"
+msgid "Change password"
+msgstr "Восстановиь пароль"
+
+#: bet/templates/registration/password_change.html:27
+msgid "Save"
+msgstr ""
 
 #: bet/templates/registration/password_change_done.html:10
 msgid "Your password was changed."
