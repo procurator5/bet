@@ -1,0 +1,1239 @@
+{% load i18n staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="ThemeStarz">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,600">
+    <link rel="stylesheet" href="{% static "landing/bootstrap/css/bootstrap.min.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "landing/font-awesome/css/fontawesome-all.min.css" %}">
+    <link rel="stylesheet" href="{% static "landing/css/style.css" %}">
+	<title>BitcoinBets - Cryptocurrency Template</title>
+
+</head>
+<body data-spy="scroll" data-target=".navbar" class="has-loading-screen">
+    <div class="ts-page-wrapper" id="page-top">
+        <!--*********************************************************************************************************-->
+        <!--************ HERO ***************************************************************************************-->
+        <!--*********************************************************************************************************-->
+        <header id="ts-hero" class="ts-full-screen ts-separate-bg-element" data-bg-image="{% static "landing/img/bg-01.jpg" %}" data-bg-parallax="scroll" data-bg-parallax-speed="3" data-bg-particles-line-color="rgba(255,255,255,.6)" data-bg-particles-dot-color="rgba(255,255,255,.1)" data-bg-particles-parallax="1">
+
+            <!--NAVIGATION ******************************************************************************************-->
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top ts-separate-bg-element" data-bg-color="#131c2b">
+                <div class="container">
+                    <a class="navbar-brand" href="#page-top">
+                        <img src="{% static "landing/img/logo.png" %}" alt="">
+                    </a>
+                    <!--end navbar-brand-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!--end navbar-toggler-->
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
+                            <a class="nav-item nav-link active" href="#page-top">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link" href="#user-stories">User Stories</a>
+                            <a class="nav-item nav-link" href="#the-process">Process</a>
+                            <a class="nav-item nav-link" href="#our-team">Our Team</a>
+                            <a class="nav-item nav-link" href="#pricing">Pricing</a>
+                            <a class="nav-item nav-link" href="#form-contact">Contact</a>
+                        </div>
+                        <!--end navbar-nav-->
+                    </div>
+                    <!--end collapse-->
+                </div>
+                <!--end container-->
+            </nav>
+            <!--end navbar-->
+
+            <!--HERO CONTENT ****************************************************************************************-->
+            <div class="container align-self-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-7">
+                        <h3 class="ts-opacity__60">Угадывай результаты матчей и зарабатывай на этом</h3>
+                        <h1>Bitcoin-ставки</h1>
+                        <a href="#how-it-works" class="btn btn-primary btn-lg">Узнай больше</a>
+                    </div>
+                    <!--end col-sm-7 col-md-7-->
+                    <div class="col-sm-5 d-none d-sm-block">
+                        <img src="{% static "landing/img/coin.png" %}" class="mw-100" alt="">
+                    </div>
+                    <!--end col-sm-5 col-md-5 col-xl-5-->
+                </div>
+                <!--end row-->
+            </div>
+            <!--end container-->
+        </header>
+        <!--end #hero-->
+
+        <!--*********************************************************************************************************-->
+        <!--************ CONTENT ************************************************************************************-->
+        <!--*********************************************************************************************************-->
+        <main id="ts-content">
+
+            <section id="live-prices">
+                <div class="clearfix ts-marquee ts-crypto-prices ts-background-is-dark" data-bg-color="#131c2b" data-from-symbol="BTC,LTC,XRP,ETH" data-to-symbol="USD,EUR,GBP,BTC"></div>
+                <!--end ts-marquee-->
+            </section>
+            <!--end #live-prices-->
+
+            <!--HOW IT WORKS ****************************************************************************************-->
+            <section id="how-it-works" class="ts-block">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2>How It Works</h2>
+                    </div>
+                    <!--end ts-title-->
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-xl-4">
+                            <figure data-animate="ts-fadeInUp">
+                                <figure class="icon mb-5">
+                                    <img src="landing/img/icon-laptop-growth.png" alt="">
+                                </figure>
+                                <h4>Invest With The Best</h4>
+                                <p>
+                                    Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis
+                                </p>
+                            </figure>
+                        </div>
+                        <!--end col-xl-4-->
+                        <div class="col-sm-6 col-md-4 col-xl-4">
+                            <figure data-animate="ts-fadeInUp" data-delay="0.1s">
+                                <figure class="icon mb-5">
+                                    <img src="landing/img/icon-exchange.png" alt="">
+                                </figure>
+                                <h4>Real Time Price</h4>
+                                <p>
+                                    Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis
+                                </p>
+                            </figure>
+                        </div>
+                        <!--end col-xl-4-->
+                        <div class="col-sm-6 offset-sm-4 col-md-4 offset-md-0 col-xl-4">
+                            <figure data-animate="ts-fadeInUp" data-delay="0.2s">
+                                <figure class="icon mb-5">
+                                    <img src="landing/img/icon-mobile-cart.png" alt="">
+                                </figure>
+                                <h4>Trade From Anywhere</h4>
+                                <p>
+                                    Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis
+                                </p>
+                            </figure>
+                        </div>
+                        <!--end col-xl-4-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END HOW IT WORKS ************************************************************************************-->
+
+            <!--WHY US **********************************************************************************************-->
+            <section id="why-us" class="ts-block ts-separate-bg-element" data-bg-color="#f8f8f8" data-bg-image="{% static "landing/img/bg-line-growth.png" %}">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-md-7 col-xl-7" data-animate="ts-fadeInUp" data-offset="100">
+                            <div class="ts-title">
+                                <h2>Почему мы</h2>
+                            </div>
+                            <!--end ts-title-->
+                            <h4>Только у нас ставки в Bitcoin на весь спектр спортивных событий.</h4>
+                            <p>
+       							Ставки на спорт - это способ значительно приумножить свой капитал, на фоне нестабильности курсов криптовалют в мире и  шанс испытать удачу, зарядиться дополнительным адреналином и ощутить азарт во время просмотра матча с участием любимой команды.
+                            </p>
+                            <a href="#form-contact" class="btn btn-primary mb-4">Contact Us</a>
+                        </div>
+                        <!--end col-xl-7-->
+                        <div class="col-md-5 col-xl-5 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
+                            <img src="{% static "landing/img/image-woman-crossed-hands.png" %} class="mw-100" alt="">
+                        </div>
+                        <!--end col-xl-5-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END WHY US ******************************************************************************************-->
+
+            <!--NUMBERS *********************************************************************************************-->
+            <section id="numbers" class="ts-block ts-background-is-dark ts-separate-bg-element" data-bg-color="#191919" data-bg-image="landing/img/bg-chart.jpg" data-bg-parallax="scroll" data-bg-parallax-speed="3">
+                <div class="container">
+                    <div class="ts-promo-numbers">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="ts-promo-number text-center">
+                                    <h2 data-animate="ts-zoomIn">1,200+</h2>
+                                    <h3 class="mb-0 ts-opacity__50">Clients</h3>
+                                    <span class="ts-promo-number-divider"></span>
+                                </div>
+                                <!--end ts-promo-number-->
+                            </div>
+                            <!--end col-sm-4-->
+                            <div class="col-sm-4">
+                                <div class="ts-promo-number text-center">
+                                    <h2 data-animate="ts-zoomIn" data-delay="0.2s">$3,15 M</h2>
+                                    <h3 class="mb-0 ts-opacity__50">Invested</h3>
+                                    <span class="ts-promo-number-divider"></span>
+                                </div>
+                                <!--end ts-promo-number-->
+                            </div>
+                            <!--end col-sm-4-->
+                            <div class="col-sm-4">
+                                <div class="ts-promo-number text-center">
+                                    <h2 data-animate="ts-zoomIn" data-delay="0.2s">14%</h2>
+                                    <h3 class="mb-0 ts-opacity__50">Growth p.a.</h3>
+                                </div>
+                                <!--end ts-promo-number-->
+                            </div>
+                            <!--end col-sm-4-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end ts-promo-numbers-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END NUMBERS *****************************************************************************************-->
+
+            <!--USER STORIES ****************************************************************************************-->
+            <div id="user-stories" class="ts-block">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2>Отзывы наших клиентов</h2>
+                    </div>
+                    <div class="card-columns ts-column-count-sm-2 ts-column-count-md-2 ts-column-count-lg-3 ts-column-count-xl-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="{% static "landing/img/person-sm-01.jpg" %}"></figure>
+                                    <h5>Василий Генов</h5>
+                                </div>
+                                <p class="mb-0">
+                                    За неделю игры я удвоил свой капитал. У меня раньше был негативный опыт со ставками в фиатных конторах, длительная идентификация, 
+                                    проблемы с пополнением депозита -((. Здесь же всё супер, никаких проблем с пополнением и снятием с депозита, 
+                                    всё просто и быстро, свою первую ставку я сделал уже через пять минут!!!, -)). Ребята молодцы, делают хорошее дело. Респект.
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="{% static "landing/img/person-sm-02.jpg" %}"></figure>
+                                    <h5>Айрис Хачатурян</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Я давно интересуюсь футболом и считаю, что неплохо разбираюсь в нём.  Одновременно у меня имеются вложения в криптовалюту, 
+                                    которую я пока продавать не намерен. Учитывая ситуацию на рынках, не располагающую, на мой взгляд,  к биржевой торговле в 
+                                    настоящее время, ставки на спорт сталт прекрасным решением для меня. Cосредоточившись на своём любимом виде спорта, я не \
+                                    только испытал множество положительных эмоций, но и значительно увеличил свои сбережения.
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="landing/img/person-sm-03.jpg"></figure>
+                                    <h5>Lisa Haley</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Ut sapien urna, sagittis a magna in, malesuada ornare massa. Pellentesque id ligula est.
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="landing/img/person-sm-04.jpg"></figure>
+                                    <h5>Levi Masters</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Phasellus in iaculis ante. Fusce odio justo, pulvinar sit amet nisl sed, lacinia laoreet
+                                    augue. Integer eu ultrices lacus, at laoreet nunc.  Pellentesque id
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="landing/img/person-sm-05.jpg"></figure>
+                                    <h5>Tierra F. Lane</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh
+                                    posuere. Aenean sagittis nisl.
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="landing/img/person-sm-06.jpg"></figure>
+                                    <h5>Harold Williamson</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Fusce tincidunt turpis a dui pulvinar venenatis. Sed elementum sollicitudin euismod.
+                                    Phasellus elementum nunc ac quam gravida interdum. Ut vitae ex est. Suspendisse ut
+                                    congue arcu. Cras sit amet condimentum arcu. Ut tortor odio, elementum quis tellus
+                                    vel, finibus semper turpis. Nunc eget dui leo.
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="landing/img/person-sm-07.jpg"></figure>
+                                    <h5>Anna Huynh</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Sed elementum sollicitudin euismod.
+                                    Phasellus elementum nunc ac quam gravida interdum. Ut vitae ex est. Suspendisse ut
+                                    congue arcu. Cras sit amet condimentum arcu.
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <figure class="ts-circle-sm ts-shadow__sm mr-3" data-bg-image="landing/img/person-sm-08.jpg"></figure>
+                                    <h5>Billy Ware</h5>
+                                </div>
+                                <p class="mb-0">
+                                    Phasellus in iaculis ante. Fusce odio justo, pulvinar sit amet nisl sed, lacinia laoreet
+                                    augue. Integer eu ultrices lacus, at laoreet nunc.  Pellentesque id
+                                </p>
+                            </div>
+                            <!--end card-body-->
+                        </div>
+                        <!--end card-->
+                    </div>
+                    <!--end card-columns-->
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-dark">Load More</a>
+                    </div>
+                </div>
+                <!--end container-->
+            </div>
+            <!--END USER STORIES ************************************************************************************-->
+
+            <!--ABOUT CRYPTO CURRENCIES *****************************************************************************-->
+            <section id="about-crypto-currencies" class="pb-0 ts-block ts-separate-bg-element" data-bg-color="#f8f8f8" data-bg-image="landing/img/bg-lines-volume.png" data-bg-image-opacity=".1" data-bg-size="inherit" data-bg-position="bottom">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2>About Crypto Currencies</h2>
+                        <h5>Why the cryptocurencies are so popular?</h5>
+                    </div>
+                    <!--end ts-title-->
+                    <div class="row">
+                        <div class="col-md-7">
+                            <figure class="mb-5 ts-xs-text-center" data-animate="ts-fadeInRight">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="landing/img/icon-wallet.png" class="mw-100 mb-2" alt="">
+                                    </div>
+                                    <!--end col-md-2-->
+                                    <div class="col-md-10">
+                                        <h4 class="mb-3">Secure Wallet</h4>
+                                        <p class="mb-0">
+                                            Integer eu ultrices lacus, at laoreet nunc. In tincidunt nisi lorem, eu tempor
+                                            ligula pulvinar at.
+                                        </p>
+                                    </div>
+                                    <!--end col-md-10-->
+                                </div>
+                                <!--end row-->
+                            </figure>
+                            <!--end figure-->
+                            <figure class="mb-5 ts-xs-text-center" data-animate="ts-fadeInRight" data-delay="0.1s">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="landing/img/icon-dollar-cog-wheel.png" class="mw-100 mb-2" alt="">
+                                    </div>
+                                    <!--end col-md-2-->
+                                    <div class="col-md-10">
+                                        <h4 class="mb-3">Decentralized System</h4>
+                                        <p class="mb-0">
+                                            Nulla facilisi. Integer pharetra mi sit amet eros rhoncus mattis.
+                                            Quisque scelerisque tristique nisl facilisis tristique.
+                                        </p>
+                                    </div>
+                                    <!--end col-md-10-->
+                                </div>
+                                <!--end row-->
+                            </figure>
+                            <!--end figure-->
+                            <figure class="mb-5 ts-xs-text-center" data-animate="ts-fadeInRight" data-delay="0.2s">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="landing/img/icon-money-hand.png" class="mw-100 mb-2" alt="">
+                                    </div>
+                                    <!--end col-md-2-->
+                                    <div class="col-md-10">
+                                        <h4 class="mb-3">Instant Payment</h4>
+                                        <p class="mb-0">
+                                            Suspendisse ullamcorper, dolor ac lobortis consequat, arcu risus scelerisque leo,
+                                            at facilisis ante nulla a nulla.
+                                        </p>
+                                    </div>
+                                    <!--end col-md-10-->
+                                </div>
+                                <!--end row-->
+                            </figure>
+                            <!--end figure-->
+                        </div>
+                        <!--end col-md-7-->
+                        <div class="col-md-5 align-self-end text-center" data-animate="ts-fadeInUp" data-delay="0.3s">
+                            <img src="landing/img/image-phone-growth.png" class="mw-100" alt="">
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END ABOUT CRYPTO CURRENCIES *************************************************************************-->
+
+            <!--NEWS ************************************************************************************************-->
+            <section id="news" class="p-0 ts-block ts-background-is-dark">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters ts-cards-same-height">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="card mb-0 ts-card__flat" data-bg-color="#131c2b">
+                                <div class="card-body p-5 ts-pb-0">
+                                    <h5 class="ts-text-small ts-opacity__50">24/06/2018</h5>
+                                    <h4>BitCoin Attacks $25,000</h4>
+                                    <p>
+                                        Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis
+                                        ibh posuere. Aenean sagittis nisl uthicula sagitti. Lorem ipsum dolor sit amet...
+                                    </p>
+                                </div>
+                                <div class="card-footer p-5 ts-pt-0">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                                </div>
+                            </div>
+                            <!--end figure-->
+                        </div>
+                        <!--end-col-md-3-->
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="card mb-0 ts-card__flat" data-bg-color="#1f2836">
+                                <div class="card-body p-5 ts-pb-0">
+                                    <h5 class="ts-text-small ts-opacity__50">20/06/2018</h5>
+                                    <h4>Market Capitalization Again</h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                                        iaculis rutrum quam ut lacinia. Proin condimentum libero sed mattis malesuada.
+                                        Pellentesque varius urna auctor, blandit tortor vitae...
+                                    </p>
+                                </div>
+                                <div class="card-footer p-5 ts-pt-0">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                                </div>
+                            </div>
+                            <!--end figure-->
+                        </div>
+                        <!--end-col-md-3-->
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="card mb-0 ts-card__flat" data-bg-color="#2a3240">
+                                <div class="card-body p-5 ts-pb-0">
+                                    <h5 class="ts-text-small ts-opacity__50">12/04/2018</h5>
+                                    <h4>Who’s The Winner This Year?</h4>
+                                    <p>
+                                        Suspendisse ullamcorper, dolor ac lobortis consequat, arcu risus scelerisque leo,
+                                        at facilisis ante nulla a nulla. Fusce ut convallis sem, vel convallis quam...
+                                    </p>
+                                </div>
+                                <div class="card-footer p-5 ts-pt-0">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                                </div>
+                            </div>
+                            <!--end figure-->
+                        </div>
+                        <!--end-col-md-3-->
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="card mb-0 ts-card__flat" data-bg-color="#363e4b">
+                                <div class="card-body p-5 ts-pb-0">
+                                    <h5 class="ts-text-small ts-opacity__50">17/03/2018</h5>
+                                    <h4>Ripple Still Strong After Sells</h4>
+                                    <p>
+                                        Cras et leo vel leo lacinia luctus sed eu felis. Aenean consequat erat ut turpis blandit,
+                                        at laoreet ante auctor. Aliquam erat volutpat. Pellentesque lacinia ullamcorper imperdiet
+                                    </p>
+                                </div>
+                                <div class="card-footer p-5 ts-pt-0">
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
+                                </div>
+                            </div>
+                            <!--end figure-->
+                        </div>
+                        <!--end-col-md-3-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-fluid-->
+            </section>
+            <!--END NEWS ********************************************************************************************-->
+
+            <!--PROCESS *********************************************************************************************-->
+            <section id="the-process" class="pb-0 ts-block">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2>The Process</h2>
+                    </div>
+                    <!--end ts-title-->
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="ts-item">
+                                <div class="ts-item-content">
+                                    <div class="ts-item-header">
+                                        <figure class="icon">
+                                            <span class="step" data-animate="ts-zoomIn">1</span>
+                                            <img src="landing/img/icon-bubbles.png" alt="">
+                                        </figure>
+                                        <!--end icon-->
+                                    </div>
+                                    <!--end ts-item-header-->
+                                    <div class="ts-item-body">
+                                        <h4>Free Consultation</h4>
+                                        <p>
+                                            Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis
+                                        </p>
+                                    </div>
+                                    <!--end ts-item-body-->
+                                </div>
+                                <!--end ts-item-content-->
+                            </div>
+                            <!--end ts-item-->
+                        </div>
+                        <!--end col-xl-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="ts-item">
+                                <div class="ts-item-content">
+                                    <div class="ts-item-header">
+                                        <figure class="icon">
+                                            <span class="step" data-animate="ts-zoomIn" data-delay="0.2s">2</span>
+                                            <img src="landing/img/icon-head-idea.png" alt="">
+                                        </figure>
+                                        <!--end icon-->
+                                    </div>
+                                    <!--end ts-item-header-->
+                                    <div class="ts-item-body">
+                                        <h4>Idea & Solution</h4>
+                                        <p>
+                                            Suspendisse eget semper justo, a laoreet sapien. Ut a est vitae
+                                        </p>
+                                    </div>
+                                    <!--end ts-item-body-->
+                                </div>
+                                <!--end ts-item-content-->
+                            </div>
+                            <!--end ts-item-->
+                        </div>
+                        <!--end col-xl-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="ts-item">
+                                <div class="ts-item-content">
+                                    <div class="ts-item-header">
+                                        <figure class="icon">
+                                            <span class="step" data-animate="ts-zoomIn" data-delay="0.4s">3</span>
+                                            <img src="landing/img/icon-wallet-coin.png" alt="">
+                                        </figure>
+                                        <!--end icon-->
+                                    </div>
+                                    <!--end ts-item-header-->
+                                    <div class="ts-item-body">
+                                        <h4>Fund The Wallet</h4>
+                                        <p>
+                                            Etiam viverra, mi non ullamcorper ultricies, lacus nibh maximus
+                                        </p>
+                                    </div>
+                                    <!--end ts-item-body-->
+                                </div>
+                                <!--end ts-item-content-->
+                            </div>
+                            <!--end ts-item-->
+                        </div>
+                        <!--end col-xl-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="ts-item">
+                                <div class="ts-item-content">
+                                    <div class="ts-item-header">
+                                        <figure class="icon">
+                                            <span class="step" data-animate="ts-zoomIn" data-delay="0.6s">4</span>
+                                            <img src="landing/img/icon-lcd-growth.png" alt="">
+                                        </figure>
+                                        <!--end icon-->
+                                    </div>
+                                    <!--end ts-item-header-->
+                                    <div class="ts-item-body">
+                                        <h4>Earn The Money</h4>
+                                        <p>
+                                            Quisque vitae arcu iaculis, consectetur nunc ut, rutrum neque.
+                                        </p>
+                                    </div>
+                                    <!--end ts-item-body-->
+                                </div>
+                                <!--end ts-item-content-->
+                            </div>
+                            <!--end ts-item-->
+                        </div>
+                        <!--end col-xl-3-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END PROCESS *****************************************************************************************-->
+
+            <!--SUBSCRIBE *******************************************************************************************-->
+            <section id="subscribe" class="pt-5 ts-block">
+                <div class="container">
+                    <div class="ts-block-inside ts-shadow__lg ts-border-radius__md ts-separate-bg-element ts-background-is-dark" data-bg-color="#16243b" data-bg-image="landing/img/bg-mobile-hand.jpg" data-bg-image-opacity=".05">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <div class="ts-title mb-4">
+                                    <h3 class="mb-2">Subscribe For Crypto News!</h3>
+                                    <h5>Get news right into your inbox! No SPAM, of course</h5>
+                                </div>
+                                <form class="ts-form ts-form-email ts-labels-inside-input" data-php-path="landing/php/email.php">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="email-subscribe">Email address</label>
+                                                <input type="email" class="form-control" id="email-subscribe" aria-describedby="subscribe" name="email" placeholder="" required>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-md-10-->
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                                        </div>
+                                        <!--end col-md-2-->
+                                    </div>
+                                    <!--end row-->
+                                </form>
+                                <!--end ts-form-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--end ts-block-inside-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END SUBSCRIBE ***************************************************************************************-->
+
+            <!--PRICE CHART *****************************************************************************************-->
+            <section id="price-chart" class="ts-block ts-separate-bg-element" data-bg-color="#131c2b" data-bg-image="landing/img/bg-blurred.jpg" data-bg-image-opacity=".5" data-bg-particles-line-color="rgba(255,255,255,.6)" data-bg-particles-dot-color="rgba(255,255,255,.4)">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2 class="ts-font-color__white">Price Chart</h2>
+                    </div>
+                    <!--end ts-title-->
+                    <div class="ts-box">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <!-- TradingView Widget BEGIN -->
+                                <div class="tradingview-widget-container ts-height__400px">
+                                    <div id="tv-medium-widget" class="ts-trading-view-widget ts-shadow__lg ts-border-radius__lg"></div>
+                                    <script src="https://s3.tradingview.com/tv.js"></script>
+                                    <script>
+                                        new TradingView.MediumWidget(
+                                            {
+                                                "container_id": "tv-medium-widget",
+                                                "symbols": [
+                                                    [
+                                                        "BTCUSD",
+                                                        "BITSTAMP:BTCUSD|1y"
+                                                    ],
+                                                    [
+                                                        "XRPUSD",
+                                                        "BITFINEX:XRPUSD|1y"
+                                                    ],
+                                                    [
+                                                        "ETHUSD",
+                                                        "BITSTAMP:ETHUSD|1y"
+                                                    ],
+                                                    [
+                                                        "BCHUSD",
+                                                        "BITSTAMP:BCHUSD|1y"
+                                                    ],
+                                                    [
+                                                        "DASHBTC",
+                                                        "BITTREX:DASHBTC|1y"
+                                                    ],
+                                                    [
+                                                        "ZECUSD",
+                                                        "BITFINEX:ZECUSD|1y"
+                                                    ],
+                                                    [
+                                                        "LTCUSD",
+                                                        "BITFINEX:LTCUSD|1y"
+                                                    ],
+                                                    [
+                                                        "STRBTC",
+                                                        "POLONIEX:STRBTC|1y"
+                                                    ],
+                                                    [
+                                                        "IOTUSD",
+                                                        "BITFINEX:IOTUSD|1y"
+                                                    ]
+                                                ],
+                                                "greyText": "Quotes by",
+                                                "gridLineColor": "#e9e9ea",
+                                                "fontColor": "#83888D",
+                                                "underLineColor": "rgba(216, 216, 216, 0.26)",
+                                                "trendLineColor": "rgba(182, 182, 182, 1)",
+                                                "width": "100%",
+                                                "height": "100%",
+                                                "locale": "en"
+                                            }
+                                        );
+                                    </script>
+                                </div>
+                                <!-- TradingView Widget END -->
+                            </div>
+                            <!--end col-md-9-->
+                            <div class="col-md-4 mt-3">
+                                <h3>Exchange</h3>
+                                <form class="form">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <input type="text" id="from_symbol_input" class="form-control" placeholder="Amount" value="1">
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <select class="form-control" id="from_symbol_select">
+                                                    <option>USD</option>
+                                                    <option>EUR</option>
+                                                    <option selected>BTC</option>
+                                                    <option>LTC</option>
+                                                </select>
+                                                <!--end select-->
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end form-row-->
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <input type="text" id="to_symbol_input" class="form-control ts-input__static" placeholder="Amount" value="1">
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <select class="form-control" id="to_symbol_select">
+                                                    <option selected>USD</option>
+                                                    <option>EUR</option>
+                                                    <option>BTC</option>
+                                                    <option>LTC</option>
+                                                </select>
+                                                <!--end select-->
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end form-row-->
+                                </form>
+                                <!--end form-->
+                                <hr>
+                                <h3>Trade Now</h3>
+                                <form class="form">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Amount" value="1">
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <select class="form-control">
+                                                    <option>USD</option>
+                                                    <option>EUR</option>
+                                                    <option selected>BTC</option>
+                                                    <option>LTC</option>
+                                                </select>
+                                                <!--end select-->
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end form-row-->
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <button class="btn btn-success w-100">Buy</button>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <button class="btn btn-danger w-100">Sell</button>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <!--end col-->
+                                    </div>
+                                    <!--end form-row-->
+                                </form>
+                                <!--end form-->
+                            </div>
+                            <!--end col-md-3-->
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END PRICE CHART *************************************************************************************-->
+
+            <!--OUR TEAM ********************************************************************************************-->
+            <section id="our-team" class="ts-block" data-bg-color="#f7f7f7">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2>Our Team</h2>
+                    </div>
+                    <!--end ts-title-->
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="ts-card__image ts-img-into-bg">
+                                    <img class="card-img-top" src="landing/img/person-01.jpg" alt="Card image cap">
+                                </div>
+                                <!--end ts-card__image-->
+                                <div class="card-body">
+                                    <h5 class="mb-1">Anita Matthews</h5>
+                                    <h6 class="ts-opacity__50">Company CEO</h6>
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-footer bg-white">
+                                    <div class="ts-social-icons">
+                                        <a href="#">
+                                            <i class="fa fa-envelope"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <!--end social-icons-->
+                                </div>
+                                <!--end card-footer-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="ts-card__image ts-img-into-bg">
+                                    <img class="card-img-top" src="landing/img/person-02.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-1">Levi Masters</h5>
+                                    <h6 class="ts-opacity__50">Investment Specialist</h6>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <div class="ts-social-icons">
+                                        <a href="#">
+                                            <i class="fa fa-envelope"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <!--end social-icons-->
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="ts-card__image ts-img-into-bg">
+                                    <img class="card-img-top" src="landing/img/person-03.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-1">John Doe</h5>
+                                    <h6 class="ts-opacity__50">Head Of Marketing</h6>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <div class="ts-social-icons">
+                                        <a href="#">
+                                            <i class="fa fa-envelope"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <!--end social-icons-->
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card">
+                                <div class="ts-card__image ts-img-into-bg">
+                                    <img class="card-img-top" src="landing/img/person-04.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="mb-1">Lisa Haley</h5>
+                                    <h6 class="ts-opacity__50">Customer Support</h6>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <div class="ts-social-icons">
+                                        <a href="#">
+                                            <i class="fa fa-envelope"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <!--end social-icons-->
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END OUR TEAM ****************************************************************************************-->
+
+            <!--PRICING *********************************************************************************************-->
+            <section id="pricing" class="ts-block">
+                <div class="container">
+                    <div class="ts-title">
+                        <h2>Pricing</h2>
+                    </div>
+                    <!--end ts-title-->
+                    <div class="row ts-cards-same-height">
+                        <!--Price Box-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card ts-card__flat ts-price-box ts-xs-text-center" data-animate="ts-fadeInRight">
+                                <div class="card-header bg-transparent pl-0 pt-5 ts-border-none">
+                                    <h3 class="mb-2">Package</h3>
+                                    <h5 class="ts-opacity__50">Price</h5>
+                                </div>
+                                <!--end card-header-->
+                                <div class="card-body pl-0">
+                                    <ul class="list-unstyled">
+                                        <li>Live Prices</li>
+                                        <li>Spread</li>
+                                        <li>Leverage</li>
+                                        <li>Email Support</li>
+                                        <li>Live Support</li>
+                                    </ul>
+                                    <!--end list-->
+                                </div>
+                                <!--end card-body-->
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-center ts-price-box" data-animate="ts-fadeInUp" data-delay="0.1s">
+                                <div class="card-header bg-transparent pt-5 ts-border-none">
+                                    <h3 class="mb-2">Silver</h3>
+                                    <h5 class="ts-opacity__50">Free</h5>
+                                </div>
+                                <!--end card-header-->
+                                <div class="card-body">
+                                    <ul class="list-unstyled ts-list-divided">
+                                        <li>
+                                            <i class="fa fa-check text-success"></i>
+                                        </li>
+                                        <li>1%</li>
+                                        <li>1:5</li>
+                                        <li>
+                                            <i class="fa fa-check text-success"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-times text-danger"></i>
+                                        </li>
+                                    </ul>
+                                    <!--end list-->
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-footer bg-transparent pt-0 ts-border-none">
+                                    <a href="#" class="btn btn-dark">Select Now</a>
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-center ts-price-box ts-price-box__promoted" data-bg-color="#131c2b" data-animate="ts-fadeInUp" data-delay="0.2s">
+                                <div class="card-header bg-transparent pt-5 ts-border-none">
+                                    <h3 class="mb-2">Gold</h3>
+                                    <h5 class="ts-opacity__50">$20 / Month</h5>
+                                </div>
+                                <!--end card-header-->
+                                <div class="card-body">
+                                    <ul class="list-unstyled ts-list-divided">
+                                        <li>
+                                            <i class="fa fa-check text-success"></i>
+                                        </li>
+                                        <li>0.5%</li>
+                                        <li>1:100</li>
+                                        <li>1:100</li>
+                                        <li>1:100</li>
+                                        <li>
+                                            <i class="fa fa-check text-success"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-times text-success"></i>
+                                        </li>
+                                    </ul>
+                                    <!--end list-->
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-footer bg-transparent pt-0 ts-border-none">
+                                    <a href="#" class="btn btn-outline-light">Select Now</a>
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card text-center ts-price-box" data-animate="ts-fadeInUp" data-delay="0.3s">
+                                <div class="card-header bg-transparent pt-5 ts-border-none">
+                                    <h3 class="mb-2">Platinum</h3>
+                                    <h5 class="ts-opacity__50">$30 / Month</h5>
+                                </div>
+                                <!--end card-header-->
+                                <div class="card-body">
+                                    <ul class="list-unstyled ts-list-divided">
+                                        <li>
+                                            <i class="fa fa-check text-success"></i>
+                                        </li>
+                                        <li>0.1%</li>
+                                        <li>1:200</li>
+                                        <li>
+                                            <i class="fa fa-check text-success"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-times text-success"></i>
+                                        </li>
+                                    </ul>
+                                    <!--end list-->
+                                </div>
+                                <!--end card-body-->
+                                <div class="card-footer bg-transparent pt-0 ts-border-none">
+                                    <a href="#" class="btn btn-dark">Select Now</a>
+                                </div>
+                            </div>
+                            <!--end card-->
+                        </div>
+                        <!--end col-md-3-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END PRICING *****************************************************************************************-->
+
+            <hr>
+
+            <!--PARTNERS ********************************************************************************************-->
+            <section id="partners" class="py-5 ts-block">
+                <div class="container">
+                    <div class="d-block d-md-flex justify-content-between align-items-center text-center ts-partners ">
+                        <a href="#">
+                            <img src="landing/img/logo-01.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="landing/img/logo-02.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="landing/img/logo-03.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="landing/img/logo-04.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="landing/img/logo-05.png" alt="">
+                        </a>
+                    </div>
+                    <!--end logos-->
+                </div>
+                <!--end container-->
+            </section>
+            <!--END PARTNERS ****************************************************************************************-->
+
+        </main>
+        <!--end #content-->
+
+        <!--*********************************************************************************************************-->
+        <!--************ FOOTER *************************************************************************************-->
+        <!--*********************************************************************************************************-->
+        <footer id="ts-footer">
+            <div class="container-fluid px-0">
+                <div class="row no-gutters">
+                    <div class="col-sm-12 col-lg-6 bg-dark">
+                        <div class="map" id="map"></div>
+                    </div>
+                    <!--end col-->
+                    <div class="col-sm-12 col-lg-6 ts-background-is-dark" data-bg-color="#1f2836">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="p-5">
+                                    <h3>Address</h3>
+                                    <address>
+                                        <figure>
+                                            2590 Rocky Road
+                                            Philadelphia, PA 19108
+                                        </figure>
+                                        <br>
+                                        <figure>
+                                            <div class="font-weight-bold">Email:</div>
+                                            <a href="#">office@example.com</a>
+                                        </figure>
+                                        <figure>
+                                            <div class="font-weight-bold">Phone:</div>
+                                            +1 215-606-0391
+                                        </figure>
+                                        <div class="font-weight-bold">Skype:</div>
+                                        crypto.agency
+                                    </address>
+                                    <!--end address-->
+                                </div>
+                                <!--end p-5-->
+                            </div>
+                            <!--end col-md-4-->
+                            <div class="col-md-8">
+                                <div class="p-5">
+                                    <h3>Contact Form</h3>
+                                    <form id="form-contact" method="post" class="clearfix ts-form ts-form-email ts-inputs__transparent" data-php-path="landing/php/email.php">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="form-contact-name">Your Name *</label>
+                                                    <input type="text" class="form-control" id="form-contact-name" name="name" placeholder="Your Name" required>
+                                                </div>
+                                                <!--end form-group -->
+                                            </div>
+                                            <!--end col-md-6 col-sm-6 -->
+                                            <div class="col-md-6 col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="form-contact-email">Your Email *</label>
+                                                    <input type="email" class="form-control" id="form-contact-email" name="email" placeholder="Your Email" required>
+                                                </div>
+                                                <!--end form-group -->
+                                            </div>
+                                            <!--end col-md-6 col-sm-6 -->
+                                        </div>
+                                        <!--end row -->
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="form-contact-message">Your Message *</label>
+                                                    <textarea class="form-control" id="form-contact-message" rows="5" name="message" placeholder="Your Message" required></textarea>
+                                                </div>
+                                                <!--end form-group -->
+                                            </div>
+                                            <!--end col-md-12 -->
+                                        </div>
+                                        <!--end row -->
+                                        <div class="form-group clearfix">
+                                            <button type="submit" class="btn btn-primary float-right" id="form-contact-submit">Send a Message</button>
+                                        </div>
+                                        <!--end form-group -->
+                                        <div class="form-contact-status"></div>
+                                    </form>
+                                    <!--end form-contact -->
+                                </div>
+                                <!--end p-5-->
+                            </div>
+                            <!--end col-md-8-->
+                        </div>
+                        <!--end row-->
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row.not-gutters-->
+            </div>
+            <!--end container-fluid-->
+
+            <div class="p-4 ts-block ts-background-is-dark" data-bg-color="#131c2b" data-bg-image="landing/img/bg-blurred.jpg">
+                <div class="container">
+                    <small>© 2018 ThemeStarz, All Rights Reserved</small>
+                </div>
+                <!--end container-->
+            </div>
+            <!--end ts-block-->
+        </footer>
+        <!--end #footer-->
+    </div>
+    <!--end page-->
+
+    <script>
+        if( document.getElementsByClassName("ts-full-screen").length ) {
+            document.getElementsByClassName("ts-full-screen")[0].style.height = window.innerHeight + "px";
+        }
+    </script>
+	<script src="{% static "landing/js/jquery-3.3.1.min.js" %}"></script>
+	<script src="{% static "landing/js/popper.min.js" %}"></script>
+	<script src="{% static "landing/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "landing/js/imagesloaded.pkgd.min.js" %}"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58"></script>
+	<script src="{% static "landing/js/isInViewport.jquery.js" %}"></script>
+	<script src="{% static "landing/js/jquery.particleground.min.js" %}"></script>
+	<script src="{% static "landing/js/jquery.marquee.min.js" %}"></script>
+	<script src="{% static "landing/js/scrolla.jquery.min.js" %}"></script>
+	<script src="{% static "landing/js/jquery.validate.min.js" %}"></script>
+	<script src="{% static "landing/js/jquery-validate.bootstrap-tooltip.min.js" %}"></script>
+    <script src="{% static "landing/js/custom.js" %}"></script>
+
+    <!--Google map-->
+
+    <script>
+        var latitude = 34.038405;
+        var longitude = -117.946944;
+        var markerImage = "{% static "landing/img/map-marker-w.png"%}";
+        var mapElement = "map";
+        var mapStyle = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#424b5b"},{"weight":2},{"gamma":"1"}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"weight":0.6},{"color":"#545b6b"},{"gamma":"0"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#545b6b"},{"gamma":"1"},{"weight":"10"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#666c7b"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#545b6b"}]},{"featureType":"road","elementType":"geometry","stylers":[{"color":"#424a5b"},{"lightness":"0"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#666c7b"}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2e3546"}]}];
+        google.maps.event.addDomListener(window, 'load', simpleMap(latitude, longitude, markerImage, mapStyle, mapElement));
+    </script>
+
+</body>
+</html>

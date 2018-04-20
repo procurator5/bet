@@ -1,0 +1,31 @@
+{% load i18n %}
+{% url 'profile' as profile %}
+{% url 'history' as history %}
+{% url 'settings' as settings %}
+
+   <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
+      <div class="menu-inner position-fixed tab-list-current">
+         <div class="tab-list tab-list-current" data-count="3">
+            <ul>
+               <li data-id="profileGeneral" class="tab item-profileGeneral  {% if request.get_full_path == profile %}active{% endif %}" onclick="return location.href = '{{ profile }}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">{% trans "Profile" %}</div>
+                  </div>
+               </li>
+               <li data-id="history" class="tab item-history {% if request.get_full_path == history %}active{% endif %}" onclick="return location.href = '{{ history }}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">{% trans "History" %}</div>
+                  </div>
+               </li>
+               <li data-id="profileSettings" class="tab item-profileSettings  {% if request.get_full_path == settings %}active{% endif %}" onclick="return location.href = '{{ settings }}'">
+                  <div class="tab-inner">
+                     <span class="ico-holder"></span> 
+                     <div class="text">{% trans "Settings" %}</div>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>

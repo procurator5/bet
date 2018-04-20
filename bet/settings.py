@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_bitcoin',
     'tippspiel',
     'bbil',
+    'landing',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +138,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    BASE_DIR + "/landing/static",
+)
+
+print(BASE_DIR + "/landing/static")
+
 DISTRIBUTEDLOCK_CLIENT="cache"
 
 # email send

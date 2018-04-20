@@ -24,4 +24,5 @@ urlpatterns = (
     path('', include('tippspiel.urls')),
     path('', include('bbil.urls')),
     path('', include('django_bitcoin.urls')),    
+    path('landing/', include('landing.urls')),    
 )
