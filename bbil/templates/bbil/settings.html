@@ -4,33 +4,7 @@
 
 <div id="wrapper">
    <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
-   <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
-      <div class="menu-inner position-fixed tab-list-current">
-         <div class="tabs-nav"> <a href="#" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"></a> <a href="#" class="tabs-nav__itm tabs-nav__itm--next is-inactive"></a> </div>
-         <div class="tab-list tab-list-current" data-count="3">
-            <ul>
-               <li data-id="profileGeneral" class="tab item-profileGeneral" onclick="return location.href = '{% url 'profile' %}'">
-                  <div class="tab-inner">
-                     <span class="ico-holder"></span> 
-                     <div class="text">Профайл</div>
-                  </div>
-               </li>
-               <li data-id="history" class="tab item-history" onclick="return location.href = '{% url 'history' %}'">
-                  <div class="tab-inner">
-                     <span class="ico-holder"></span> 
-                     <div class="text">История</div>
-                  </div>
-               </li>
-               <li data-id="profileSettings" class="tab item-profileSettings active">
-                  <div class="tab-inner">
-                     <span class="ico-holder"></span> 
-                     <div class="text">Настройки</div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </div>
+	{% include 'bbil/horizontal_menu.html' %}
    <div id="content-wrap">
       <div class="campaign campaign--tablet" data-loc="top">
          <div></div>
@@ -38,7 +12,7 @@
       <div class="slider"></div>
       <div id="content">
          <div class="view visible" id="settingsView">
-            <h1 class="title"><span class="title-holder">Изменение личных данных</span></h1>
+            <h1 class="title"><span class="title-holder">{% trans "Change of personal data" %}</span></h1>
             <div class="errors">
             <p>
             	{{ form.errors }}
@@ -58,13 +32,13 @@
     			</div>
 				{% endfor %}
                </fieldset>
-            <!-- Registration button --> <input type="submit" id="regButton" class="button" value="Сохранить"> <!-- END of Registration button -->               
+            <!-- Registration button --> <input type="submit" id="regButton" class="button" value="{% trans "Save" %}"> <!-- END of Registration button -->               
             </form>
             <div class="profileSettings">
-               <h1 class="title"><span class="title-holder">Настройки безопасности</span></h1>
+               <h1 class="title"><span class="title-holder">{% trans "Security Settings" %}</span></h1>
                <ul class="list">
                   <li>
-                     <a id="changePass" href="{% url 'password_change' %}">Изменение пароля<span class="chevron"></span></a>
+                     <a id="changePass" href="{% url 'password_change' %}">{% trans "Change password" %}<span class="chevron"></span></a>
                      <hr>
                   </li>
                </ul>

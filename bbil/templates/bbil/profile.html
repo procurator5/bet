@@ -6,33 +6,7 @@
 
 <div id="wrapper">
    <div class="downtime-alert" id="downtimeAlert" style="display: none;"></div>
-   <div class="menu menu-top menu-horizontal" data-slider="true" data-level="2" data-menu-id="profile" style="opacity: 1;">
-      <div class="menu-inner position-fixed tab-list-current">
-         <div class="tabs-nav"> <a href="#" class="tabs-nav__itm tabs-nav__itm--prev is-inactive"></a> <a href="#" class="tabs-nav__itm tabs-nav__itm--next is-inactive"></a> </div>
-         <div class="tab-list tab-list-current" data-count="3">
-            <ul>
-               <li data-id="profileGeneral" class="tab item-profileGeneral active">
-                  <div class="tab-inner">
-                     <span class="ico-holder"></span> 
-                     <div class="text">Профайл</div>
-                  </div>
-               </li>
-               <li data-id="history" class="tab item-history" onclick="return location.href = '{% url 'history' %}'">
-                  <div class="tab-inner">
-                     <span class="ico-holder"></span> 
-                     <div class="text">История</div>
-                  </div>
-               </li>
-               <li data-id="profileSettings" class="tab item-profileSettings" onclick="return location.href = '{% url 'settings' %}'">
-                  <div class="tab-inner">
-                     <span class="ico-holder"></span> 
-                     <div class="text">Настройки</div>
-                  </div>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </div>
+	{% include 'bbil/horizontal_menu.html' %}
    <div class="menu menu-top menu-horizontal" data-level="3" data-sticky="false"></div>
    <div class="banner" style="display: none;"></div>
    <div id="content-wrap">
@@ -43,34 +17,34 @@
       <div id="content">
          <div class="view visible" id="profileView">
             <div class="accHolder">
-               <h3>Мой счет</h3>
-               <div class="accNum"><span>Номер счёта:</span>&nbsp;{{wallet.receiving_address}}</div>
-               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">Депозит</a> <span>Баланс:</span> {{wallet.total_balance | btc2currency:user.profile.currency}}  {{ user.profile.currency }} </div>
+               <h3>{% trans "My account" %}</h3>
+               <div class="accNum"><span>{% trans "Account number" %}:</span>&nbsp;{{wallet.receiving_address}}</div>
+               <div class="accBalance"> <a id="profileDeposit" class="button" href="{% url 'pay' %}">{% trans "Deposit" %}</a> <span>{% trans "Balance" %}:</span> {{wallet.total_balance | btc2currency:user.profile.currency}}  {{ user.profile.currency }} </div>
                <ul class="accDetails">
-                  <li id="accDetailsWtb" class="al"> <span>В игре</span>
+                  <li id="accDetailsWtb" class="al"> <span>{% trans "In Game" %}</span>
                   {% if betCount > 0 %}
                   	<span class="waitingAmount ico-holder inGame">{{betCount}}</span>                  
                   {% else %} 
                   	<span class="waitingAmount ico-holder blank">0</span>
                   {% endif %} 
                   	<span class="accAmount">{{ inGame | btc2currency:user.profile.currency }} {{ user.profile.currency }}</span> </li>
-                  <li id="accDetailsWdr" class="ar"> <span>Запрошено к выплате</span> <span class="waitingPayout ico-holder">...</span> <span class="accAmount">{{to_outgoing | btc2currency:user.profile.currency}}  {{ user.profile.currency }}</span> </li>
+                  <li id="accDetailsWdr" class="ar"> <span>{% trans "Requested for payment" %} </span> <span class="waitingPayout ico-holder">...</span> <span class="accAmount">{{to_outgoing | btc2currency:user.profile.currency}}  {{ user.profile.currency }}</span> </li>
                </ul>
                <ul class="list iconized wide">
                   <li>
                      <hr>
                   </li>
                   <li>
-                     <a id="profileWithdrawals"> <span class="ico-holder"></span> <span class="label">Выплаты со счета</span> <span class="chevron"></span> </a> 
+                     <a id="profileWithdrawals" href="{% url 'escrow' %}"> <span class="ico-holder"></span> <span class="label">{% trans "Payments from the account" %} </span> <span class="chevron"></span> </a> 
                      <hr>
                   </li>
                   <li>
-                     <a id="profileNotification"> <span class="ico-holder "></span> <span class="label">Сообщения от оператора</span>  <span class="chevron"></span> </a> 
+                     <a id="profileNotification"> <span class="ico-holder "></span> <span class="label">{% trans "Administrator's messages" %}</span>  <span class="chevron"></span> </a> 
                      <hr>
                   </li>
                </ul>
             </div>
-            <a id="logout" class="button gray" onclick="return location.href = '{% url 'logout' %}'">Выход</a>  
+            <a id="logout" class="button gray" onclick="return location.href = '{% url 'logout' %}'">{% trans "Logout" %}</a>  
          </div>
       </div>
 

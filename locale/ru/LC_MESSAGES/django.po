@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 13:02+0000\n"
+"POT-Creation-Date: 2018-04-16 15:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgstr "Некорректный bitcoin адрес"
 
 #: django-bitcoin/django_bitcoin/models.py:1051
 msgid "HistoricalPrice"
-msgstr ""
+msgstr "История цен"
 
 #: django-bitcoin/django_bitcoin/models.py:1052
 msgid "HistoricalPrices"

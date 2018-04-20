@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block body %}
 <div id="wrapper">
 <div id="content-wrap">
 <div id="content">
    <div class="view visible" id="registrationView">
-      <h1 class="title"><span></span>Регистрация</h1>
+      <h1 class="title"><span></span>{% trans "Registration" %}</h1>
       <div class="registration panel" title="Регистрация">
          <div class="hintBlock">
-            <b class="fs16">При заполнении формы:</b> 
-            <p> Все поля формы являются обязательными к заполнению.<br> Настоятельно просим Вас указывать достоверную информацию. </p>
+            <b class="fs16">
+            {% blocktrans %}
+				When filling out the form: </ b>
+             <p> All the fields of the form are required. <br> We are asking you to provide reliable information. </ p>            
+			{% endblocktrans %}
             <p>
             	{{ form.errors }}
 				{{ form.non_field_errors }}
@@ -27,22 +31,13 @@
         			 </div>
     			</div>
 				{% endfor %}
-               <p class="hint">Пароль должен содержать как минимум одну букву и одну цифру.</p>
-               <!--  div class="leonru-phone-holder">
-                  <p><strong>ВАЖНО!</strong> На этот Bitcoin кошелек будет отправлен
-                      <b>Ваш выигрыш</b>.
-                     Будьте внимательны при заполнении поля
-                  </p>
-                  <div class="label-block">
-                     <label class="labelTop">Номер Bitcoin -кошелька</label>
-                     <div class="input-holder">
-                        <input type="tel" name="phone" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="validatable leonruPhoneInput" placeholder="___ _______"><span class="error"></span>
-                     </div>
-                  </div>
-               </div-->
-               
+               <p class="hint">
+            {% blocktrans %}
+               	The password must contain at least one letter and one number.
+            {% blocktrans %}
+               	</p>
             </fieldset>
-            <!-- Registration button --> <input type="submit" id="regButton" class="button" value="Зарегистрироваться"> <!-- END of Registration button -->
+            <!-- Registration button --> <input type="submit" id="regButton" class="button" value="{% trans "Sign Up" %}"> <!-- END of Registration button -->
          </form>
       </div>
    </div>

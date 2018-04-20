@@ -12,12 +12,12 @@
       <div class="slider"></div>
       <div id="content">
          <div class="view visible" id="makedepositView">
-            <h1 class="title"><span class="title-holder">Депозит на счет</span></h1>
+            <h1 class="title"><span class="title-holder">{% trans "Deposit to account" %}</span></h1>
             <div class="payment-holder">
                <div class="depWithHolder">
                   <div class="nav-bar">
                      <!-- a class="button simple select-another" id="goToDepositsList">Выбрать другой... </a --> 
-                     <div class="logo-holder"> <span class="detail-image depwebmoney" style="background-image: url(https://en.bitcoin.it/w/images/en/f/fd/BC_nBG_64px.png);"></span> </div>
+                     <div class="logo-holder"> <span class="detail-image" ></span> </div>
                   </div>
                </div>
                <div id="depositForm">
@@ -28,15 +28,15 @@
                      <fieldset>
 	                     {% csrf_token %}
                         <div class="label-block">
-                           <label class="labelTop">Вывод средств осуществляется на выбранный Вами Bitcoin-адрес: </label>
+                           <label class="labelTop">{% trans "The withdrawal of funds is carried out at the Bitcoin-address chosen by you" %}: </label>
                            <div class="input-holder">{{form.bitcoin_address}}<span class="error">{{form.bitcoin_address.error}}</span></div>
                         </div>
                         <div class="label-block">
-                           <label class="labelTop">Сумма к зачислению <span class="amountCur">({{user.profile.currency}})</span></label>
+                           <label class="labelTop">{% trans "Amount to be credited" %}:<span class="amountCur">({{user.profile.currency}})</span></label>
                            <div class="input-holder">{{form.amount}}<span class="error">{{form.amount.error}}</span></div>
                         </div>
                      </fieldset>
-                     <input type="submit" class="button" value="Зачислить">  
+                     <input type="submit" class="button" value="{% trans "Escrow" %}">  
                   </form>
                   <div class="hintBlock">
                      <br> 

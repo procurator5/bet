@@ -14,21 +14,24 @@
       <div class="slider"></div>
       <div id="content">
          <div class="view visible" id="makedepositView">
-            <h1 class="title"><span class="title-holder">Депозит на счет</span></h1>
+            <h1 class="title"><span class="title-holder">{% trans "Deposit to account" %}</span></h1>
             <div class="payment-holder">
                <div class="depWithHolder">
                   <div class="nav-bar">
                      <!-- a class="button simple select-another" id="goToDepositsList">Выбрать другой... </a --> 
-                     <div class="logo-holder"> <span class="detail-image depwebmoney" style="background-image: url(https://en.bitcoin.it/w/images/en/f/fd/BC_nBG_64px.png);"></span> </div>
+                     <div class="logo-holder"> <span class="detail-image"></span> </div>
                   </div>
                </div>
                <div id="depositForm">
                   <form method="POST" action="#">
                      <h1>Bitcoin</h1>
                   <div class="hintBlock">
-                     <p>Пополнить счет можно прямым по номеру счета (Bitcon-адрес связанный с Вашим аккаунтом) или воспрользовавшись генератором QR-кода для перечисления средств</p>
-                     <br>
-                     <p><strong>Ваш номер счета: </strong> <div style="-webkit-user-select:text">{{wallet.receiving_address}}</div></p>
+			         {% blocktrans %}     
+						<p> You can fund your account by direct account number (Bitcon address associated with your account) or by using the QR-code generator to transfer funds </p>
+                      <br>
+                      <p> <strong> Your account number: </strong>					
+					{% endblocktrans %}                     
+                     <div style="-webkit-user-select:text">{{wallet.receiving_address}}</div></p>
                      <br> 
                   </div>                     
                      <fieldset>
