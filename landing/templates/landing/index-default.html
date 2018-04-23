@@ -90,7 +90,7 @@
                         <div class="col-sm-6 col-md-4 col-xl-4">
                             <figure data-animate="ts-fadeInUp">
                                 <figure class="icon mb-5">
-                                    <img src="landing/img/icon-laptop-growth.png" alt="">
+                                    <img src="{% static "landing/img/icon-laptop-growth.png" %}" alt="">
                                 </figure>
                                 <h4>Сделай ставку</h4>
                                 <p>
@@ -102,7 +102,7 @@
                         <div class="col-sm-6 col-md-4 col-xl-4">
                             <figure data-animate="ts-fadeInUp" data-delay="0.1s">
                                 <figure class="icon mb-5">
-                                    <img src="landing/img/icon-exchange.png" alt="">
+                                    <img src="{% static "landing/img/icon-exchange.png" %}" alt="">
                                 </figure>
                                 <h4>Насладись матчем</h4>
                                 <p>
@@ -114,7 +114,7 @@
                         <div class="col-sm-6 offset-sm-4 col-md-4 offset-md-0 col-xl-4">
                             <figure data-animate="ts-fadeInUp" data-delay="0.2s">
                                 <figure class="icon mb-5">
-                                    <img src="landing/img/icon-mobile-cart.png" alt="">
+                                    <img src="{% static "landing/img/icon-mobile-cart.png" %}" alt="">
                                 </figure>
                                 <h4>Забери выигрыш</h4>
                                 <p>
@@ -139,11 +139,17 @@
                                 <h2>Почему мы</h2>
                             </div>
                             <!--end ts-title-->
-                            <h4>Только у нас ставки в Bitcoin на весь спектр спортивных событий.</h4>
+                            <h4>Только у нас ставки в Bitcoin на спортивные события.</h4>
                             <p>
-       							Ставки на спорт - это способ значительно приумножить свой капитал, на фоне нестабильности курсов криптовалют в мире и  шанс испытать удачу, зарядиться дополнительным адреналином и ощутить азарт во время просмотра матча с участием любимой команды.
+       							Ставки на спорт - шанс испытать удачу, зарядиться адреналином и ощутить азарт во время просмотра матча с участием любимой команды.
                             </p>
-                            <a href="#form-contact" class="btn btn-primary mb-4">Contact Us</a>
+                            <p>
+       							 Ставки в криптовалюте это способ значительно приумножить свой капитал на фоне нестабильности курсов криптовалют в мире. А еще Bitcoin обеспечит анонимность Ваших  транзакций.
+                            </p>
+                            <p>
+       							 Простой и удобный интерфейс позволяет быстро сделать ставку на интересующее событие. Лучший способ использовать Ваши личные прогнозы и знания в мире спорта в реальные деньги.
+                            </p>
+                            <a href="{%url "signup" %}" class="btn btn-primary mb-4">Зарегистрироваться</a>
                         </div>
                         <!--end col-xl-7-->
                         <div class="col-md-5 col-xl-5 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
@@ -158,7 +164,7 @@
             <!--END WHY US ******************************************************************************************-->
 
             <!--NUMBERS *********************************************************************************************-->
-            <section id="numbers" class="ts-block ts-background-is-dark ts-separate-bg-element" data-bg-color="#191919" data-bg-image="landing/img/bg-chart.jpg" data-bg-parallax="scroll" data-bg-parallax-speed="3">
+            <section id="numbers" class="ts-block ts-background-is-dark ts-separate-bg-element" data-bg-color="#191919" data-bg-image="{% static "landing/img/bg-chart.jpg" %}" data-bg-parallax="scroll" data-bg-parallax-speed="3">
                 <div class="container">
                     <div class="ts-promo-numbers">
                         <div class="row">
@@ -333,7 +339,7 @@
             <!--END USER STORIES ************************************************************************************-->
 
             <!--ABOUT CRYPTO CURRENCIES *****************************************************************************-->
-            <section id="about-crypto-currencies" class="pb-0 ts-block ts-separate-bg-element" data-bg-color="#f8f8f8" data-bg-image="landing/img/bg-lines-volume.png" data-bg-image-opacity=".1" data-bg-size="inherit" data-bg-position="bottom">
+            <section id="about-crypto-currencies" class="pb-0 ts-block ts-separate-bg-element" data-bg-color="#f8f8f8" data-bg-image="{% static "landing/img/bg-lines-volume.png" %}" data-bg-image-opacity=".1" data-bg-size="inherit" data-bg-position="bottom">
                 <div class="container">
                     <div class="ts-title">
                         <h2>About Crypto Currencies</h2>
@@ -345,7 +351,7 @@
                             <figure class="mb-5 ts-xs-text-center" data-animate="ts-fadeInRight">
                                 <div class="row align-items-center">
                                     <div class="col-md-2">
-                                        <img src="landing/img/icon-wallet.png" class="mw-100 mb-2" alt="">
+                                        <img src="{% static "landing/img/icon-wallet.png" %}" class="mw-100 mb-2" alt="">
                                     </div>
                                     <!--end col-md-2-->
                                     <div class="col-md-10">
@@ -363,7 +369,7 @@
                             <figure class="mb-5 ts-xs-text-center" data-animate="ts-fadeInRight" data-delay="0.1s">
                                 <div class="row align-items-center">
                                     <div class="col-md-2">
-                                        <img src="landing/img/icon-dollar-cog-wheel.png" class="mw-100 mb-2" alt="">
+                                        <img src="{% static "landing/img/icon-dollar-cog-wheel.png" %}" class="mw-100 mb-2" alt="">
                                     </div>
                                     <!--end col-md-2-->
                                     <div class="col-md-10">
@@ -381,7 +387,7 @@
                             <figure class="mb-5 ts-xs-text-center" data-animate="ts-fadeInRight" data-delay="0.2s">
                                 <div class="row align-items-center">
                                     <div class="col-md-2">
-                                        <img src="landing/img/icon-money-hand.png" class="mw-100 mb-2" alt="">
+                                        <img src="{% static "landing/img/icon-money-hand.png" %}" class="mw-100 mb-2" alt="">
                                     </div>
                                     <!--end col-md-2-->
                                     <div class="col-md-10">
@@ -399,7 +405,7 @@
                         </div>
                         <!--end col-md-7-->
                         <div class="col-md-5 align-self-end text-center" data-animate="ts-fadeInUp" data-delay="0.3s">
-                            <img src="landing/img/image-phone-growth.png" class="mw-100" alt="">
+                            <img src="{% static "landing/img/image-phone-growth.png" %}" class="mw-100" alt="">
                         </div>
                     </div>
                     <!--end row-->
@@ -422,7 +428,7 @@
                                     <div class="ts-item-header">
                                         <figure class="icon">
                                             <span class="step" data-animate="ts-zoomIn">1</span>
-                                            <img src="landing/img/icon-bubbles.png" alt="">
+                                            <img src="{% static "landing/img/icon-bubbles.png" %}" alt="">
                                         </figure>
                                         <!--end icon-->
                                     </div>
@@ -446,7 +452,7 @@
                                     <div class="ts-item-header">
                                         <figure class="icon">
                                             <span class="step" data-animate="ts-zoomIn" data-delay="0.2s">2</span>
-                                            <img src="landing/img/icon-head-idea.png" alt="">
+                                            <img src="{% static "landing/img/icon-head-idea.png" %}" alt="">
                                         </figure>
                                         <!--end icon-->
                                     </div>
@@ -470,7 +476,7 @@
                                     <div class="ts-item-header">
                                         <figure class="icon">
                                             <span class="step" data-animate="ts-zoomIn" data-delay="0.4s">3</span>
-                                            <img src="landing/img/icon-wallet-coin.png" alt="">
+                                            <img src="{% static "landing/img/icon-wallet-coin.png" %}" alt="">
                                         </figure>
                                         <!--end icon-->
                                     </div>
@@ -494,7 +500,7 @@
                                     <div class="ts-item-header">
                                         <figure class="icon">
                                             <span class="step" data-animate="ts-zoomIn" data-delay="0.6s">4</span>
-                                            <img src="landing/img/icon-lcd-growth.png" alt="">
+                                            <img src="{% static "landing/img/icon-lcd-growth.png" %}" alt="">
                                         </figure>
                                         <!--end icon-->
                                     </div>
@@ -522,7 +528,7 @@
             <!--SUBSCRIBE *******************************************************************************************-->
             <section id="subscribe" class="pt-5 ts-block">
                 <div class="container">
-                    <div class="ts-block-inside ts-shadow__lg ts-border-radius__md ts-separate-bg-element ts-background-is-dark" data-bg-color="#16243b" data-bg-image="landing/img/bg-mobile-hand.jpg" data-bg-image-opacity=".05">
+                    <div class="ts-block-inside ts-shadow__lg ts-border-radius__md ts-separate-bg-element ts-background-is-dark" data-bg-color="#16243b" data-bg-image="{% static "landing/img/bg-mobile-hand.jpg" %}" data-bg-image-opacity=".05">
                         <div class="row">
                             <div class="col-md-10 offset-md-1">
                                 <div class="ts-title mb-4">
@@ -557,32 +563,6 @@
             <!--END SUBSCRIBE ***************************************************************************************-->
 
             <hr>
-
-            <!--PARTNERS ********************************************************************************************-->
-            <section id="partners" class="py-5 ts-block">
-                <div class="container">
-                    <div class="d-block d-md-flex justify-content-between align-items-center text-center ts-partners ">
-                        <a href="#">
-                            <img src="landing/img/logo-01.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="landing/img/logo-02.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="landing/img/logo-03.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="landing/img/logo-04.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="landing/img/logo-05.png" alt="">
-                        </a>
-                    </div>
-                    <!--end logos-->
-                </div>
-                <!--end container-->
-            </section>
-            <!--END PARTNERS ****************************************************************************************-->
 
         </main>
         <!--end #content-->
