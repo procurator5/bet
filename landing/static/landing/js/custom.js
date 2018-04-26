@@ -470,40 +470,44 @@ function getPrices(){
     var fsyms = $(".ts-crypto-prices").attr("data-from-symbol");
     var tsyms = $(".ts-crypto-prices").attr("data-to-symbol");
 
-    $.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+fsyms+",&tsyms="+tsyms+"", function(data) {
-        var crossSymbols;
-        var firstSymbol;
-        var secondSymbol;
-        var price;
-        var changePtc24Hour;
+//    $.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms="+fsyms+",&tsyms="+tsyms+"", function(data) {
+    $.get("/matches/data?fsyms="+fsyms+",&tsyms="+tsyms+"", function(data) {
 
-        for( var i = 0; i < Object.keys(data["DISPLAY"]).length; i++ ){
-            firstSymbol = Object.keys(data["DISPLAY"])[i];
-            for( var e = 0; e < Object.keys(data["DISPLAY"][firstSymbol]).length; e++ ){
-                secondSymbol = Object.keys(data["DISPLAY"][firstSymbol])[e];
-                if( firstSymbol !== secondSymbol ){
-                    crossSymbols = firstSymbol + secondSymbol;
-                    price = data["DISPLAY"][firstSymbol][secondSymbol]["PRICE"];
-                    changePtc24Hour = data["DISPLAY"][firstSymbol][secondSymbol]["CHANGEPCT24HOUR"];
+    if( marqueeInitialized === 0 ){
+        
+	     $.each(data["DISPLAY"], function(key, value){
+	    	 var bets = "  ";
+	    	 $.each(value["bets"], function(betkey, betvalue){
+	    		 bets = bets+ betvalue["score"] + ", ";
+	    	 });
+	    	 bets = bets.substring(0, bets.length - 2);
+	         var html =
+	             '<div class="ts-crypto-prices__item px-4 py-5" data-currency="'+value["name"]+'">'+
+	             '<h5>' + value["name"] + '</h5>'+
+	             '<small>' + value["date"] + '</small>' +
+	             '<h4 class="my-3 text-danger ts-opacity-80">' + bets + '</h4>' +
+	             '<div class="row no-gutters">'+
+	             '<div class="col pr-1">'+
+	             '<a href="#" class="btn btn-outline-success btn-xs w-100 ts-btn-border-muted">More</a>'+
+	             '</div>'+
+	             '<!--div class="col pl-1">'+
+	             '<a href="#" class="btn btn-outline-danger btn-xs w-100 ts-btn-border-muted">Sell</a>'+
+	             '</div-->'+
+	             '</div>'+
+	             '</div>';
+	
+	         $("#live-prices").find(".ts-marquee").append(html);
+	    	 
+	    });
+        initMarquee();
+        marqueeInitialized = 1;
+    }
+/*        for( var i = 0; i < Object.keys(data["DISPLAY"]).length; i++ ){
+                    price = data["DISPLAY"]["PRICE"];
+                    changePtc24Hour = data["DISPLAY"]["CHANGEPCT24HOUR"];
                     if( marqueeInitialized === 0 ){
-                        var html =
-                            '<div class="ts-crypto-prices__item px-4 py-5" data-currency="'+crossSymbols+'">'+
-                            '<h5>' + firstSymbol + secondSymbol + '</h5>'+
-                            '<small>' + price + '</small>' +
-                            ( changePtc24Hour < 0 ? '<h4 class="my-3 text-danger ts-opacity-80">' + changePtc24Hour + '%</h4>': '<h4 class="my-3 text-success ts-opacity-80">' + changePtc24Hour + '%</h4>') +
-                            '<div class="row no-gutters">'+
-                            '<div class="col pr-1">'+
-                            '<a href="#" class="btn btn-outline-success btn-xs w-100 ts-btn-border-muted">Buy</a>'+
-                            '</div>'+
-                            '<div class="col pl-1">'+
-                            '<a href="#" class="btn btn-outline-danger btn-xs w-100 ts-btn-border-muted">Sell</a>'+
-                            '</div>'+
-                            '</div>'+
-                            '</div>';
-
-                        $("#live-prices").find(".ts-marquee").append(html);
                     }
-                    else {
+                    /*else {
                         $(".ts-crypto-prices").find("[data-currency="+crossSymbols+"]").find("small").text(price);
                         $(".ts-crypto-prices").find("small, h4").addClass("fade-in");
                         setTimeout(function () {
@@ -513,13 +517,7 @@ function getPrices(){
                             ( changePtc24Hour < 0 ? '<h4 class="my-3 text-danger ts-opacity-80">' + changePtc24Hour + '%</h4>': '<h4 class="my-3 text-success ts-opacity-80">' + changePtc24Hour + '%</h4>')
                         );
                     }
-                }
-            }
-        }
-        if( marqueeInitialized === 0 ) {
-            initMarquee();
-            marqueeInitialized = 1;
-        }
+        }*/
     });
 }
 

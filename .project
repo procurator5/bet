@@ -10,9 +10,15 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.jdrupes.eclipse.minify.plugin.minifyBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.python.pydev.pythonNature</nature>
 		<nature>org.python.pydev.django.djangoNature</nature>
+		<nature>org.jdrupes.eclipse.minify.plugin.minifyNature</nature>
 	</natures>
 </projectDescription>
