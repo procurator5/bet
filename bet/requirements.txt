@@ -3,4 +3,4 @@ jsonrpc==1.2
 celery==4.1.0
 django-distributedlock
 lxml==4.2.1
-djorm_pgfulltext
+djorm-ext-pgfulltext
