@@ -21,6 +21,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = (
     path('admin/', admin.site.urls),
     path('i18n/', include('django.conf.urls.i18n')),
+    path('oauth/', include('social_django.urls', namespace='social')),
     path('', include('tippspiel.urls')),
     path('', include('bbil.urls')),
     path('', include('django_bitcoin.urls')),    

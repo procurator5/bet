@@ -13,7 +13,14 @@
          </div>
          <div class="inputHolder"> <input type="submit" class="loginSubmit button" name="submitButton" value="{% trans "Enter" %}"> </div>
          </form>
-         <a id="pwdRecovery" href="{% url 'password_reset' %}">{% trans "Reset password" %}</a> 
-      </div>
+         <div > 
+	         <div style="float: left;"> 
+	         	<a id="pwdRecovery" href="{% url 'social:begin' 'google-oauth2' %}">Google+</a>
+	         </div>
+	         <div style="float: right;">
+	         	<a id="pwdRecovery" href="{% url 'password_reset' %}">{% trans "Reset password" %}</a>
+	         </div> 
+	      </div>
+	      </div>
    </div>
 </div>

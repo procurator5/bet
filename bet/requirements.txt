@@ -4,3 +4,4 @@ celery==4.1.0
 django-distributedlock
 lxml==4.2.1
 djorm-ext-pgfulltext
+social-auth-app-django
