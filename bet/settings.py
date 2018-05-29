@@ -165,6 +165,7 @@ EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = True
 
 XMLSOCCER_DEMO = False
+XMLSOCCER_MAX_ODDS_INFO = 1
 
 try:
     from bet.localsettings import *
