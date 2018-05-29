@@ -156,8 +156,6 @@ STATICFILES_DIRS = (
     BASE_DIR + "/landing/static",
 )
 
-print(BASE_DIR + "/landing/static")
-
 DISTRIBUTEDLOCK_CLIENT="cache"
 
 # email send
@@ -166,6 +164,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = True
 
+XMLSOCCER_DEMO = False
 
 try:
     from bet.localsettings import *
